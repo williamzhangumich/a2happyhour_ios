@@ -119,16 +119,21 @@
      if (self.parentViewController) {
          ListViewTabController *parent = (ListViewTabController *)self.parentViewController;
          NSString *text = parent.locationText.text;
-         if (text) {
+         if (text.length>0) {
+             //NSLog(@"%@",text);
              area = text;
+             [query whereKey:@"LocationCategory" equalTo:area];
+             return query;
+         }
+         else{
+             //NSLog(@"no atext");
+             return query;
          }
          
      }
      
-     if (area) {
-         NSLog(@"%@",area);
-         [query whereKey:@"LocationCategory" equalTo:area];
-     }
+   
+      
  
  /*
      PFQuery *query = [PFQuery queryWithClassName:@"GameScore"];
@@ -175,6 +180,17 @@
      
      cell.BarNameLabel.text = [object objectForKey:@"name"];
      cell.AreaLabel.text = [object objectForKey:@"LocationCategory"];
+     
+     //PFImageView *imageView = [[PFImageView alloc] init];
+     
+     
+     cell.Image.image = [UIImage imageNamed:@"Activity_indicator.png"]; // placeholder image
+     
+     cell.Image.file = (PFFile *)[object objectForKey:@"image_file"]; // remote image
+     [cell.Image loadInBackground];
+     
+     
+     
      /*
       
       
@@ -274,7 +290,7 @@
     
     //NSLog(@"%d",indexPath.row);
     
-    if (indexPath.row%25!=0) {
+    if (indexPath.row%25!=0 && indexPath.row!=0) {
         self.temp= [self.objects objectAtIndex:indexPath.row];
         [self performSegueWithIdentifier:@"detail" sender:self];
     }

@@ -12,6 +12,7 @@
 
 @synthesize BarNameLabel = _BarNameLabel;
 @synthesize AreaLabel = _AreaLabel;
+@synthesize Image = _Image;
 
 - (id)initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString *)reuseIdentifier
 {

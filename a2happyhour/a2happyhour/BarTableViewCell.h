@@ -7,9 +7,11 @@
 //
 
 #import <UIKit/UIKit.h>
+#import <Parse/Parse.h>
 
 @interface BarTableViewCell : UITableViewCell
 @property (weak, nonatomic) IBOutlet UILabel *BarNameLabel;
 @property (weak, nonatomic) IBOutlet UILabel *AreaLabel;
+@property (weak, nonatomic) IBOutlet PFImageView *Image;
 
 @end

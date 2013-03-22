@@ -92,7 +92,7 @@
                                     <subviews>
                                         <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Name Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Wzj-Tx-v4M">
                                             <constraints>
-                                                <constraint firstAttribute="width" constant="181" id="sOb-CU-RfY"/>
+                                                <constraint firstAttribute="width" constant="181" id="wIn-an-EAN"/>
                                             </constraints>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                             <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
@@ -100,25 +100,34 @@
                                         </label>
                                         <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Area Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MqO-xp-xXX">
                                             <constraints>
+                                                <constraint firstAttribute="width" constant="184" id="Gx2-yq-MTC"/>
                                                 <constraint firstAttribute="height" constant="21" id="Hoa-Xg-VG1"/>
-                                                <constraint firstAttribute="width" constant="83" id="mne-D9-XYS"/>
                                             </constraints>
                                             <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                             <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                             <color key="highlightedColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         </label>
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="K8f-vx-uyh" customClass="PFImageView">
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="99" id="Awu-Uj-wdU"/>
+                                                <constraint firstAttribute="width" constant="106" id="xIb-yh-oTK"/>
+                                            </constraints>
+                                        </imageView>
                                     </subviews>
                                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 </view>
                                 <constraints>
+                                    <constraint firstItem="K8f-vx-uyh" firstAttribute="top" secondItem="xyh-Ov-2Gp" secondAttribute="top" type="default" id="EM6-MN-gqB"/>
                                     <constraint firstItem="MqO-xp-xXX" firstAttribute="top" secondItem="Wzj-Tx-v4M" secondAttribute="bottom" constant="8" symbolic="YES" type="default" id="LXg-ai-PdK"/>
-                                    <constraint firstItem="Wzj-Tx-v4M" firstAttribute="leading" secondItem="xyh-Ov-2Gp" secondAttribute="leading" constant="88" id="VWz-wf-ECC"/>
-                                    <constraint firstItem="MqO-xp-xXX" firstAttribute="leading" secondItem="Wzj-Tx-v4M" secondAttribute="leading" type="default" id="ZXX-7c-u8j"/>
+                                    <constraint firstItem="MqO-xp-xXX" firstAttribute="leading" secondItem="Wzj-Tx-v4M" secondAttribute="leading" type="default" id="QoH-8M-Zt9"/>
                                     <constraint firstItem="Wzj-Tx-v4M" firstAttribute="top" secondItem="xyh-Ov-2Gp" secondAttribute="top" constant="20" type="default" id="dbr-Td-hDh"/>
+                                    <constraint firstAttribute="trailing" secondItem="Wzj-Tx-v4M" secondAttribute="trailing" constant="20" type="default" id="idA-R5-AAZ"/>
+                                    <constraint firstItem="K8f-vx-uyh" firstAttribute="leading" secondItem="xyh-Ov-2Gp" secondAttribute="leading" type="default" id="wB9-b5-8RW"/>
                                 </constraints>
                                 <connections>
                                     <outlet property="AreaLabel" destination="MqO-xp-xXX" id="4gg-tl-zvC"/>
                                     <outlet property="BarNameLabel" destination="Wzj-Tx-v4M" id="AFH-h2-Law"/>
+                                    <outlet property="Image" destination="K8f-vx-uyh" id="ZJu-Bb-xmp"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -222,6 +231,7 @@
             <relationships>
                 <relationship kind="outlet" name="AreaLabel" candidateClass="UILabel"/>
                 <relationship kind="outlet" name="BarNameLabel" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="Image" candidateClass="PFImageView"/>
             </relationships>
         </class>
         <class className="DetailViewController" superclassName="UIViewController">
@@ -245,6 +255,9 @@
         </class>
         <class className="NSLayoutConstraint" superclassName="NSObject">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/NSLayoutConstraint.h"/>
+        </class>
+        <class className="PFImageView" superclassName="UIImageView">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/PFImageView.h"/>
         </class>
         <class className="PFQueryTableViewController" superclassName="UITableViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/PFQueryTableViewController.h"/>
