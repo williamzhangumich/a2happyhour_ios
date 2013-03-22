@@ -9,6 +9,7 @@
 #import "MainTableViewController.h"
 #import "ListViewTabController.h"
 #import "DetailViewController.h"
+#import "BarTableViewCell.h"
 
 @interface MainTableViewController ()
 @property (strong,nonatomic) PFObject* temp;
@@ -30,16 +31,16 @@
         self.textKey = @"name";
         
         // Uncomment the following line to specify the key of a PFFile on the PFObject to display in the imageView of the default cell style
-        // self.imageKey = @"image";
+        self.imageKey = @"image_file";
         
         // Whether the built-in pull-to-refresh is enabled
         self.pullToRefreshEnabled = YES;
         
         // Whether the built-in pagination is enabled
-        self.paginationEnabled = YES;
+        //self.paginationEnabled = YES;
         
         // The number of objects to show per page
-        self.objectsPerPage = 25;
+        //self.objectsPerPage = 25;
     }
     return self;
 }
@@ -165,7 +166,19 @@
  // a UITableViewCellStyleDefault style cell with the label being the textKey in the object,
  // and the imageView being the imageKey in the object.
  - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath object:(PFObject *)object {
- static NSString *CellIdentifier = @"Cell";
+     static NSString *CellIdentifier = @"BarTableViewCell";
+     
+     BarTableViewCell *cell = (BarTableViewCell *)[tableView dequeueReusableCellWithIdentifier:CellIdentifier];
+     if (cell == nil) {
+         cell = [[BarTableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier];
+     }
+     
+     cell.BarNameLabel.text = [object objectForKey:@"name"];
+     cell.AreaLabel.text = [object objectForKey:@"LocationCategory"];
+     /*
+      
+      
+ static NSString *CellIdentifier = @"cell";
  
  PFTableViewCell *cell = (PFTableViewCell *)[tableView dequeueReusableCellWithIdentifier:CellIdentifier];
  if (cell == nil) {
@@ -176,7 +189,17 @@
  cell.textLabel.text = [object objectForKey:self.textKey];
  //cell.imageView.file = [object objectForKey:self.imageKey];
  cell.detailTextLabel.text = [object objectForKey:@"LocationCategory"];
- 
+     
+      */
+      
+ /*
+     PFImageView *imageView = [[PFImageView alloc] init];
+     //imageView.image = [UIImage imageNamed:@"..."]; // placeholder image
+     //imageView.file = (PFFile *)[object objectForKey:@"image_file"]; // remote image
+     cell.imageView.file = (PFFile *)[object objectForKey:@"image_file"]; // remote image
+     [imageView loadInBackground];
+  */
+     
  return cell;
  }
 
@@ -246,8 +269,17 @@
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     [super tableView:tableView didSelectRowAtIndexPath:indexPath];
-    self.temp= [self.objects objectAtIndex:indexPath.row];
-    [self performSegueWithIdentifier:@"detail" sender:self];
+    
+    //NSLog(@"%@",[tableView cellForRowAtIndexPath:indexPath].te);
+    
+    //NSLog(@"%d",indexPath.row);
+    
+    if (indexPath.row%25!=0) {
+        self.temp= [self.objects objectAtIndex:indexPath.row];
+        [self performSegueWithIdentifier:@"detail" sender:self];
+    }
+    
+    
     
 }
 
