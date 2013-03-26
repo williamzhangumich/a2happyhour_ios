@@ -11,7 +11,7 @@
 #import "DetailViewController.h"
 #import "BarTableViewCell.h"
 
-@interface MainTableViewController ()
+@interface MainTableViewController ()<UITextFieldDelegate>
 @property (strong,nonatomic) PFObject* temp;
 @end
 
@@ -92,6 +92,16 @@
     return (interfaceOrientation == UIInterfaceOrientationPortrait);
 }
 
+- (BOOL)textFieldShouldReturn:(UITextField *)textField
+{
+    if ([textField.text length]) {
+        [textField resignFirstResponder];
+        [self loadObjects ];
+        return YES;
+    } else {
+        return NO;
+    }
+}
 
 #pragma mark - PFQueryTableViewController
 
