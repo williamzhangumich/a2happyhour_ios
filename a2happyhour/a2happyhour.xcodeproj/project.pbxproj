@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		27474BB216FC1EB9006DE40B /* BarTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 27474BB116FC1EB9006DE40B /* BarTableViewCell.m */; };
 		27474BB616FC2BCC006DE40B /* Activity_indicator.png in Resources */ = {isa = PBXBuildFile; fileRef = 27474BB516FC2BCC006DE40B /* Activity_indicator.png */; };
+		276932061702A98A00D1727F /* GeoPointAnnotation.m in Sources */ = {isa = PBXBuildFile; fileRef = 276932051702A98A00D1727F /* GeoPointAnnotation.m */; };
+		276932081702AA0E00D1727F /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 276932071702AA0E00D1727F /* MapKit.framework */; };
 		27874F3E16FABEEA0072F7F6 /* ListViewTabController.m in Sources */ = {isa = PBXBuildFile; fileRef = 27874F3D16FABEE90072F7F6 /* ListViewTabController.m */; };
 		27874F4816FAD2A70072F7F6 /* DetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 27874F4716FAD2A70072F7F6 /* DetailViewController.m */; };
 		27E1C79616FA98D6006DE882 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 27E1C79516FA98D6006DE882 /* UIKit.framework */; };
@@ -41,6 +43,9 @@
 		27474BB016FC1EB9006DE40B /* BarTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BarTableViewCell.h; sourceTree = "<group>"; };
 		27474BB116FC1EB9006DE40B /* BarTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BarTableViewCell.m; sourceTree = "<group>"; };
 		27474BB516FC2BCC006DE40B /* Activity_indicator.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Activity_indicator.png; sourceTree = "<group>"; };
+		276932041702A98A00D1727F /* GeoPointAnnotation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GeoPointAnnotation.h; sourceTree = "<group>"; };
+		276932051702A98A00D1727F /* GeoPointAnnotation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GeoPointAnnotation.m; sourceTree = "<group>"; };
+		276932071702AA0E00D1727F /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
 		27874F3C16FABEE90072F7F6 /* ListViewTabController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ListViewTabController.h; sourceTree = "<group>"; };
 		27874F3D16FABEE90072F7F6 /* ListViewTabController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ListViewTabController.m; sourceTree = "<group>"; };
 		27874F4616FAD2A70072F7F6 /* DetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DetailViewController.h; path = ../DetailViewController.h; sourceTree = "<group>"; };
@@ -81,6 +86,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				276932081702AA0E00D1727F /* MapKit.framework in Frameworks */,
 				27E1C7D116FA9B72006DE882 /* Accounts.framework in Frameworks */,
 				27E1C7CF16FA9B68006DE882 /* Social.framework in Frameworks */,
 				27E1C7CD16FA9B58006DE882 /* AdSupport.framework in Frameworks */,
@@ -106,9 +112,6 @@
 		27E1C78916FA98D6006DE882 = {
 			isa = PBXGroup;
 			children = (
-				27E1C7D016FA9B72006DE882 /* Accounts.framework */,
-				27E1C7CE16FA9B68006DE882 /* Social.framework */,
-				27E1C7CC16FA9B58006DE882 /* AdSupport.framework */,
 				27E1C79B16FA98D6006DE882 /* a2happyhour */,
 				27E1C79416FA98D6006DE882 /* Frameworks */,
 				27E1C79316FA98D6006DE882 /* Products */,
@@ -126,6 +129,10 @@
 		27E1C79416FA98D6006DE882 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				276932071702AA0E00D1727F /* MapKit.framework */,
+				27E1C7D016FA9B72006DE882 /* Accounts.framework */,
+				27E1C7CE16FA9B68006DE882 /* Social.framework */,
+				27E1C7CC16FA9B58006DE882 /* AdSupport.framework */,
 				27E1C7CA16FA99BD006DE882 /* SystemConfiguration.framework */,
 				27E1C7C816FA99B4006DE882 /* StoreKit.framework */,
 				27E1C7C616FA99AD006DE882 /* Security.framework */,
@@ -151,6 +158,8 @@
 				27E1C7AD16FA98D6006DE882 /* MainStoryboard.storyboard */,
 				27474BB016FC1EB9006DE40B /* BarTableViewCell.h */,
 				27474BB116FC1EB9006DE40B /* BarTableViewCell.m */,
+				276932041702A98A00D1727F /* GeoPointAnnotation.h */,
+				276932051702A98A00D1727F /* GeoPointAnnotation.m */,
 				27874F3C16FABEE90072F7F6 /* ListViewTabController.h */,
 				27874F3D16FABEE90072F7F6 /* ListViewTabController.m */,
 				27E1C7D516FAA35E006DE882 /* MainTableViewController.h */,
@@ -250,6 +259,7 @@
 				27874F3E16FABEEA0072F7F6 /* ListViewTabController.m in Sources */,
 				27874F4816FAD2A70072F7F6 /* DetailViewController.m in Sources */,
 				27474BB216FC1EB9006DE40B /* BarTableViewCell.m in Sources */,
+				276932061702A98A00D1727F /* GeoPointAnnotation.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

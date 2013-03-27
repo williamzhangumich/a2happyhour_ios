@@ -13,6 +13,7 @@
 @synthesize BarNameLabel = _BarNameLabel;
 @synthesize AreaLabel = _AreaLabel;
 @synthesize Image = _Image;
+@synthesize addressLabel = _addressLabel;
 
 - (id)initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString *)reuseIdentifier
 {

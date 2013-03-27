@@ -12,6 +12,7 @@
 
 @property (weak, nonatomic) IBOutlet UITextField *locationText;
 
+@property (weak, nonatomic) IBOutlet UIView *TableViewContainer;
 
 
 @end

@@ -7,6 +7,7 @@
 //
 
 #import "ListViewTabController.h"
+#import "MainTableViewController.h"
 
 @interface ListViewTabController ()
 
@@ -14,6 +15,7 @@
 
 @implementation ListViewTabController
 
+@synthesize TableViewContainer = _TableViewContainer;
 @synthesize locationText = _locationText;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
@@ -40,7 +42,10 @@
 
 - (BOOL)textFieldShouldReturn:(UITextField *)textField {
     [textField resignFirstResponder];
+    NSLog(@"%@", [self.childViewControllers objectAtIndex:0]);
+    [(MainTableViewController *)[self.childViewControllers objectAtIndex:0] loadObjects];
     return NO;
 }
+     
 
 @end

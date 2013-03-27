@@ -13,5 +13,6 @@
 @property (weak, nonatomic) IBOutlet UILabel *BarNameLabel;
 @property (weak, nonatomic) IBOutlet UILabel *AreaLabel;
 @property (weak, nonatomic) IBOutlet PFImageView *Image;
+@property (weak, nonatomic) IBOutlet UILabel *addressLabel;
 
 @end

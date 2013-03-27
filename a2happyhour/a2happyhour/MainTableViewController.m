@@ -57,7 +57,6 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    
     // Uncomment the following line to preserve selection between presentations.
     // self.clearsSelectionOnViewWillAppear = NO;
     
@@ -124,6 +123,7 @@
      PFQuery *query = [PFQuery queryWithClassName:self.className];
      //NSLog(@"%@",self.parentViewController);
      
+     [query whereKeyExists:@"latlong"];
      NSString *area;
      
      if (self.parentViewController) {
@@ -133,6 +133,7 @@
              //NSLog(@"%@",text);
              area = text;
              [query whereKey:@"LocationCategory" equalTo:area];
+             
              return query;
          }
          else{
@@ -197,6 +198,7 @@
      cell.Image.image = [UIImage imageNamed:@"Activity_indicator.png"]; // placeholder image
      
      cell.Image.file = (PFFile *)[object objectForKey:@"image_file"]; // remote image
+     cell.addressLabel.text = [object objectForKey:@"address"];
      [cell.Image loadInBackground];
      
      
@@ -300,18 +302,18 @@
     
     //NSLog(@"%d",indexPath.row);
     
-    if (indexPath.row%25!=0 && indexPath.row!=0) {
+    if (indexPath.row%25!=0 || indexPath.row==0) {
         self.temp= [self.objects objectAtIndex:indexPath.row];
         [self performSegueWithIdentifier:@"detail" sender:self];
     }
-    
-    
     
 }
 
 -(void) prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender{
     if ([segue.identifier isEqualToString:@"detail"]) {
-        [segue.destinationViewController setBar:self.temp];
+        
+        [segue.destinationViewController setBar:[self.objects objectAtIndex:[self.tableView indexPathForSelectedRow].row]];
+        //NSLog(@"%@", [self.temp objectForKey:@"latlong"]);
     }
 }
 
