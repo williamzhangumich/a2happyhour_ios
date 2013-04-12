@@ -9,9 +9,10 @@
 #import <UIKit/UIKit.h>
 #import <CoreLocation/CoreLocation.h>
 #import <MapKit/MapKit.h>
+#import <Parse/Parse.h>
 #import "GeoPointAnnotation.h"
 
 @interface MapViewTabController : UIViewController
 @property (weak, nonatomic) IBOutlet MKMapView *BarsMapView;
-@property (strong, nonatomic) CLLocationManager *MyLocationManager; 
+@property (strong, nonatomic) CLLocationManager *MyLocationManager;
 @end
