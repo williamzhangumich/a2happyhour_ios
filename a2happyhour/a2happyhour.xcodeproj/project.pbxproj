@@ -11,6 +11,7 @@
 		27474BB616FC2BCC006DE40B /* Activity_indicator.png in Resources */ = {isa = PBXBuildFile; fileRef = 27474BB516FC2BCC006DE40B /* Activity_indicator.png */; };
 		276932061702A98A00D1727F /* GeoPointAnnotation.m in Sources */ = {isa = PBXBuildFile; fileRef = 276932051702A98A00D1727F /* GeoPointAnnotation.m */; };
 		276932081702AA0E00D1727F /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 276932071702AA0E00D1727F /* MapKit.framework */; };
+		2769320B1717C17A00D1727F /* MapViewTabController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2769320A1717C17A00D1727F /* MapViewTabController.m */; };
 		27874F3E16FABEEA0072F7F6 /* ListViewTabController.m in Sources */ = {isa = PBXBuildFile; fileRef = 27874F3D16FABEE90072F7F6 /* ListViewTabController.m */; };
 		27874F4816FAD2A70072F7F6 /* DetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 27874F4716FAD2A70072F7F6 /* DetailViewController.m */; };
 		27E1C79616FA98D6006DE882 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 27E1C79516FA98D6006DE882 /* UIKit.framework */; };
@@ -46,6 +47,8 @@
 		276932041702A98A00D1727F /* GeoPointAnnotation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GeoPointAnnotation.h; sourceTree = "<group>"; };
 		276932051702A98A00D1727F /* GeoPointAnnotation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GeoPointAnnotation.m; sourceTree = "<group>"; };
 		276932071702AA0E00D1727F /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
+		276932091717C17A00D1727F /* MapViewTabController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MapViewTabController.h; sourceTree = "<group>"; };
+		2769320A1717C17A00D1727F /* MapViewTabController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MapViewTabController.m; sourceTree = "<group>"; };
 		27874F3C16FABEE90072F7F6 /* ListViewTabController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ListViewTabController.h; sourceTree = "<group>"; };
 		27874F3D16FABEE90072F7F6 /* ListViewTabController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ListViewTabController.m; sourceTree = "<group>"; };
 		27874F4616FAD2A70072F7F6 /* DetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DetailViewController.h; path = ../DetailViewController.h; sourceTree = "<group>"; };
@@ -156,6 +159,8 @@
 				27E1C7A416FA98D6006DE882 /* AppDelegate.h */,
 				27E1C7A516FA98D6006DE882 /* AppDelegate.m */,
 				27E1C7AD16FA98D6006DE882 /* MainStoryboard.storyboard */,
+				276932091717C17A00D1727F /* MapViewTabController.h */,
+				2769320A1717C17A00D1727F /* MapViewTabController.m */,
 				27474BB016FC1EB9006DE40B /* BarTableViewCell.h */,
 				27474BB116FC1EB9006DE40B /* BarTableViewCell.m */,
 				276932041702A98A00D1727F /* GeoPointAnnotation.h */,
@@ -260,6 +265,7 @@
 				27874F4816FAD2A70072F7F6 /* DetailViewController.m in Sources */,
 				27474BB216FC1EB9006DE40B /* BarTableViewCell.m in Sources */,
 				276932061702A98A00D1727F /* GeoPointAnnotation.m in Sources */,
+				2769320B1717C17A00D1727F /* MapViewTabController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
