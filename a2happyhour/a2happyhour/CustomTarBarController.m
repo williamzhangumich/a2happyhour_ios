@@ -39,7 +39,9 @@
     // Background
     UIImageView* bgView = [[UIImageView alloc] initWithImage: [UIImage imageNamed:@"tabbar.png"]];
     bgView.frame = CGRectMake(0, 420, 320, 60);
-    [self.view addSubview:bgView];
+    //[self.view addSubview:bgView];
+    
+    [self.view insertSubview:bgView atIndex:0];
 
     
 }

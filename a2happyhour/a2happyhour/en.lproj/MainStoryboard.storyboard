@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="2.0" toolsVersion="3084" systemVersion="12D78" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="lJX-n2-d81">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="2.0" toolsVersion="3084" systemVersion="11G63" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="lJX-n2-d81">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="2083"/>
     </dependencies>
@@ -28,7 +28,7 @@
                             <constraint firstItem="h3W-R4-bgK" firstAttribute="trailing" secondItem="wGo-wI-S6c" secondAttribute="trailing" type="default" id="fFk-fT-CXJ"/>
                         </constraints>
                     </view>
-                    <tabBarItem key="tabBarItem" title="MapView" id="wrx-pj-tE5"/>
+                    <tabBarItem key="tabBarItem" title="MapView" image="map.png" id="wrx-pj-tE5"/>
                     <connections>
                         <outlet property="BarsMapView" destination="h3W-R4-bgK" id="bML-6c-aIg"/>
                     </connections>
@@ -251,7 +251,7 @@
         <scene sceneID="47B-H8-9yE">
             <objects>
                 <navigationController id="eNr-HU-x9H" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="ListView" id="I1f-M8-NDP"/>
+                    <tabBarItem key="tabBarItem" title="ListView" image="list.png" id="I1f-M8-NDP"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="xHV-bB-0Ua">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
@@ -267,6 +267,60 @@
             <point key="canvasLocation" x="124" y="-229"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="list.png" width="60" height="44"/>
+        <image name="map.png" width="30" height="30"/>
+    </resources>
+    <classes>
+        <class className="BarTableViewCell" superclassName="UITableViewCell">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/BarTableViewCell.h"/>
+            <relationships>
+                <relationship kind="outlet" name="AreaLabel" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="BarNameLabel" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="Image" candidateClass="PFImageView"/>
+                <relationship kind="outlet" name="addressLabel" candidateClass="UILabel"/>
+            </relationships>
+        </class>
+        <class className="CustomTarBarController" superclassName="UITabBarController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/CustomTarBarController.h"/>
+        </class>
+        <class className="DetailViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/DetailViewController.h"/>
+            <relationships>
+                <relationship kind="outlet" name="BarMapView" candidateClass="MKMapView"/>
+                <relationship kind="outlet" name="deal" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="name" candidateClass="UILabel"/>
+            </relationships>
+        </class>
+        <class className="ListViewTabController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/ListViewTabController.h"/>
+            <relationships>
+                <relationship kind="outlet" name="TableViewContainer" candidateClass="UIView"/>
+                <relationship kind="outlet" name="locationText" candidateClass="UITextField"/>
+            </relationships>
+        </class>
+        <class className="MainTableViewController" superclassName="PFQueryTableViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/MainTableViewController.h"/>
+            <relationships>
+                <relationship kind="outlet" name="customTableView" candidateClass="UITableView"/>
+            </relationships>
+        </class>
+        <class className="MapViewTabController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/MapViewTabController.h"/>
+            <relationships>
+                <relationship kind="outlet" name="BarsMapView" candidateClass="MKMapView"/>
+            </relationships>
+        </class>
+        <class className="NSLayoutConstraint" superclassName="NSObject">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/NSLayoutConstraint.h"/>
+        </class>
+        <class className="PFImageView" superclassName="UIImageView">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/PFImageView.h"/>
+        </class>
+        <class className="PFQueryTableViewController" superclassName="UITableViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/PFQueryTableViewController.h"/>
+        </class>
+    </classes>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>
         <simulatedOrientationMetrics key="orientation"/>
