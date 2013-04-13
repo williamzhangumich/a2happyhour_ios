@@ -11,9 +11,9 @@
 @implementation BarTableViewCell
 
 @synthesize BarNameLabel = _BarNameLabel;
-@synthesize AreaLabel = _AreaLabel;
+@synthesize AllTime = _AllTime;
 @synthesize Image = _Image;
-@synthesize addressLabel = _addressLabel;
+@synthesize AllSpecial = _AllSpecial;
 
 - (id)initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString *)reuseIdentifier
 {

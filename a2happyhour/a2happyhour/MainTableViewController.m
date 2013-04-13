@@ -190,7 +190,7 @@
      }
      
      cell.BarNameLabel.text = [object objectForKey:@"name"];
-     cell.AreaLabel.text = [object objectForKey:@"LocationCategory"];
+     cell.AllTime.text = [object objectForKey:@"AllTime"];
      
      //PFImageView *imageView = [[PFImageView alloc] init];
      
@@ -198,7 +198,7 @@
      cell.Image.image = [UIImage imageNamed:@"Activity_indicator.png"]; // placeholder image
      
      cell.Image.file = (PFFile *)[object objectForKey:@"image_file"]; // remote image
-     cell.addressLabel.text = [object objectForKey:@"address"];
+     cell.AllSpecial.text = [object objectForKey:@"AllSpecial"];
      [cell.Image loadInBackground];
      
      
