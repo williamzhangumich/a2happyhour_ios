@@ -12,7 +12,7 @@
                         <rect key="frame" x="0.0" y="20" width="320" height="499"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="h3W-R4-bgK">
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" showsUserLocation="YES" translatesAutoresizingMaskIntoConstraints="NO" id="h3W-R4-bgK">
                                 <constraints>
                                     <constraint firstAttribute="height" constant="453" id="aJq-vd-Eqb"/>
                                 </constraints>
@@ -269,7 +269,7 @@
     </scenes>
     <resources>
         <image name="list.png" width="60" height="44"/>
-        <image name="map.png" width="30" height="30"/>
+        <image name="map.png" width="60" height="60"/>
     </resources>
     <classes>
         <class className="BarTableViewCell" superclassName="UITableViewCell">

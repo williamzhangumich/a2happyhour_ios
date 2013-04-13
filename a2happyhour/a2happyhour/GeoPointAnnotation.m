@@ -9,7 +9,7 @@
 #import "GeoPointAnnotation.h"
 
 @interface GeoPointAnnotation()
-@property (nonatomic, strong) PFObject *object;
+
 @end
 
 @implementation GeoPointAnnotation
@@ -27,6 +27,7 @@
     }
     return self;
 }
+
 
 
 #pragma mark - MKAnnotation
