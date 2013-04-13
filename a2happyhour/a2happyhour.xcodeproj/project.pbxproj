@@ -38,6 +38,7 @@
 		27E1C7CF16FA9B68006DE882 /* Social.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 27E1C7CE16FA9B68006DE882 /* Social.framework */; settings = {ATTRIBUTES = (Required, ); }; };
 		27E1C7D116FA9B72006DE882 /* Accounts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 27E1C7D016FA9B72006DE882 /* Accounts.framework */; };
 		27E1C7D716FAA35E006DE882 /* MainTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 27E1C7D616FAA35E006DE882 /* MainTableViewController.m */; };
+		869FA84B1718D89F00D20927 /* CustomTarBarController.m in Sources */ = {isa = PBXBuildFile; fileRef = 869FA84A1718D89F00D20927 /* CustomTarBarController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -82,6 +83,8 @@
 		27E1C7D016FA9B72006DE882 /* Accounts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Accounts.framework; path = System/Library/Frameworks/Accounts.framework; sourceTree = SDKROOT; };
 		27E1C7D516FAA35E006DE882 /* MainTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MainTableViewController.h; sourceTree = "<group>"; };
 		27E1C7D616FAA35E006DE882 /* MainTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MainTableViewController.m; sourceTree = "<group>"; };
+		869FA8491718D89F00D20927 /* CustomTarBarController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CustomTarBarController.h; sourceTree = "<group>"; };
+		869FA84A1718D89F00D20927 /* CustomTarBarController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CustomTarBarController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -156,6 +159,8 @@
 		27E1C79B16FA98D6006DE882 /* a2happyhour */ = {
 			isa = PBXGroup;
 			children = (
+				869FA8491718D89F00D20927 /* CustomTarBarController.h */,
+				869FA84A1718D89F00D20927 /* CustomTarBarController.m */,
 				27E1C7A416FA98D6006DE882 /* AppDelegate.h */,
 				27E1C7A516FA98D6006DE882 /* AppDelegate.m */,
 				27E1C7AD16FA98D6006DE882 /* MainStoryboard.storyboard */,
@@ -266,6 +271,7 @@
 				27474BB216FC1EB9006DE40B /* BarTableViewCell.m in Sources */,
 				276932061702A98A00D1727F /* GeoPointAnnotation.m in Sources */,
 				2769320B1717C17A00D1727F /* MapViewTabController.m in Sources */,
+				869FA84B1718D89F00D20927 /* CustomTarBarController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
