@@ -59,7 +59,7 @@
     [super viewDidLoad];
     // Uncomment the following line to preserve selection between presentations.
     // self.clearsSelectionOnViewWillAppear = NO;
-    
+    self.tableView.backgroundColor=[self getColor:@"222222"];
     // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
     // self.navigationItem.rightBarButtonItem = self.editButtonItem;
 }
@@ -189,6 +189,10 @@
          cell = [[BarTableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier];
      }
      
+     cell.AllTime.textColor=[self getColor:@"cc3300"];
+     cell.BarNameLabel.textColor=[self getColor:@"33cc66"];
+     cell.AllSpecial.textColor=[self getColor:@"ff9900"];
+     
      cell.BarNameLabel.text = [object objectForKey:@"name"];
      cell.AllTime.text = [object objectForKey:@"AllTime"];
      
@@ -302,6 +306,8 @@
     
     //NSLog(@"%d",indexPath.row);
     
+
+    
     if (indexPath.row%25!=0 || indexPath.row==0) {
         self.temp= [self.objects objectAtIndex:indexPath.row];
         [self performSegueWithIdentifier:@"detail" sender:self];
@@ -318,6 +324,24 @@
 }
 
 
+// HEX Color to RGB Color
+- (UIColor *)getColor:(NSString *)hexColor
+{
+	unsigned int red,green,blue;
+	NSRange range;
+	range.length = 2;
+	
+	range.location = 0;
+	[[NSScanner scannerWithString:[hexColor substringWithRange:range]] scanHexInt:&red];
+	
+	range.location = 2;
+	[[NSScanner scannerWithString:[hexColor substringWithRange:range]] scanHexInt:&green];
+	
+	range.location = 4;
+	[[NSScanner scannerWithString:[hexColor substringWithRange:range]] scanHexInt:&blue];
+	
+	return [UIColor colorWithRed:(float)(red/255.0f) green:(float)(green / 255.0f) blue:(float)(blue / 255.0f) alpha:1.0f];
+}
 
 
 
