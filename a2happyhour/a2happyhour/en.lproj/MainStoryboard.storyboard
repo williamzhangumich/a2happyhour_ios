@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="2.0" toolsVersion="3084" systemVersion="11G63" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="lJX-n2-d81">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="2.0" toolsVersion="3084" systemVersion="12D78" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="lJX-n2-d81">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="2083"/>
     </dependencies>
@@ -69,6 +69,11 @@
                                     <outlet property="delegate" destination="8GB-2q-sm9" id="QJf-vx-00F"/>
                                 </connections>
                             </mapView>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SCx-51-NGH">
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
@@ -76,15 +81,18 @@
                             <constraint firstItem="quh-ok-TXA" firstAttribute="trailing" secondItem="CUH-3z-y8H" secondAttribute="trailing" type="default" id="SVB-nS-21b"/>
                             <constraint firstItem="quh-ok-TXA" firstAttribute="leading" secondItem="CUH-3z-y8H" secondAttribute="leading" type="default" id="TFA-Fl-G0w"/>
                             <constraint firstItem="wsy-6B-Duh" firstAttribute="leading" secondItem="5yR-a0-Bbs" secondAttribute="leading" constant="20" symbolic="YES" type="default" id="V2L-21-tBn"/>
+                            <constraint firstItem="SCx-51-NGH" firstAttribute="top" secondItem="5yR-a0-Bbs" secondAttribute="top" constant="110" id="bwg-es-5SI"/>
                             <constraint firstAttribute="trailing" secondItem="wsy-6B-Duh" secondAttribute="trailing" constant="20" symbolic="YES" type="default" id="dgM-y3-PgQ"/>
                             <constraint firstItem="quh-ok-TXA" firstAttribute="top" secondItem="CUH-3z-y8H" secondAttribute="bottom" constant="8" symbolic="YES" type="default" id="fUn-29-7gm"/>
                             <constraint firstItem="CUH-3z-y8H" firstAttribute="leading" secondItem="5yR-a0-Bbs" secondAttribute="leading" constant="49" id="rh9-zr-aqG"/>
                             <constraint firstItem="CUH-3z-y8H" firstAttribute="top" secondItem="5yR-a0-Bbs" secondAttribute="top" constant="26" id="urF-pR-I70"/>
+                            <constraint firstAttribute="trailing" secondItem="SCx-51-NGH" secondAttribute="trailing" constant="53" id="wS4-Z8-hEI"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="KLR-cx-a0W"/>
                     <connections>
                         <outlet property="BarMapView" destination="wsy-6B-Duh" id="zgc-Tx-Fqa"/>
+                        <outlet property="LocationCategoryLable" destination="SCx-51-NGH" id="HIf-Xk-ysF"/>
                         <outlet property="deal" destination="quh-ok-TXA" id="2MC-eN-mhp"/>
                         <outlet property="name" destination="CUH-3z-y8H" id="vcn-70-nHp"/>
                     </connections>
@@ -97,64 +105,78 @@
         <scene sceneID="32r-FT-Ef0">
             <objects>
                 <tableViewController id="r5d-E0-2Yg" customClass="MainTableViewController" sceneMemberID="viewController">
-                    <tableView key="view" opaque="NO" clipsSubviews="YES" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" rowHeight="100" sectionHeaderHeight="22" sectionFooterHeight="22" id="f2G-Bi-YXh">
+                    <tableView key="view" opaque="NO" clipsSubviews="YES" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="115" sectionHeaderHeight="22" sectionFooterHeight="22" id="f2G-Bi-YXh">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="394"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
-                            <tableViewCell contentMode="scaleToFill" selectionStyle="blue" indentationWidth="10" reuseIdentifier="BarTableViewCell" rowHeight="100" id="xyh-Ov-2Gp" customClass="BarTableViewCell">
-                                <rect key="frame" x="0.0" y="22" width="320" height="100"/>
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="blue" indentationWidth="10" reuseIdentifier="BarTableViewCell" rowHeight="115" id="xyh-Ov-2Gp" customClass="BarTableViewCell">
+                                <rect key="frame" x="0.0" y="22" width="320" height="115"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
-                                    <rect key="frame" x="0.0" y="0.0" width="320" height="99"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="320" height="114"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Name Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Wzj-Tx-v4M">
                                             <constraints>
-                                                <constraint firstAttribute="width" constant="181" id="wIn-an-EAN"/>
+                                                <constraint firstAttribute="height" constant="21" id="TU8-w5-GiO"/>
+                                                <constraint firstAttribute="width" constant="181" id="niL-B4-PQb"/>
                                             </constraints>
-                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                            <color key="highlightedColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                        </label>
-                                        <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Area Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MqO-xp-xXX">
-                                            <constraints>
-                                                <constraint firstAttribute="width" constant="184" id="Gx2-yq-MTC"/>
-                                                <constraint firstAttribute="height" constant="21" id="SVX-Ra-3tq"/>
-                                            </constraints>
-                                            <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                            <fontDescription key="fontDescription" name="Helvetica" family="Helvetica" pointSize="18"/>
                                             <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                             <color key="highlightedColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         </label>
                                         <imageView userInteractionEnabled="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="K8f-vx-uyh" customClass="PFImageView">
                                             <constraints>
-                                                <constraint firstAttribute="height" constant="99" id="Awu-Uj-wdU"/>
-                                                <constraint firstAttribute="width" constant="106" id="xIb-yh-oTK"/>
+                                                <constraint firstAttribute="width" constant="91" id="KW1-Xi-uGG"/>
+                                                <constraint firstAttribute="height" constant="84" id="Se7-yd-a9Z"/>
                                             </constraints>
                                         </imageView>
-                                        <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bM2-d6-M1Q">
-                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" image="line.png" translatesAutoresizingMaskIntoConstraints="NO" id="I0J-zA-C3P">
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="14" id="C9N-pg-6O6"/>
+                                            </constraints>
+                                        </imageView>
+                                        <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="AllTime Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tIl-Le-4MP">
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="18" id="7o1-H9-pcc"/>
+                                                <constraint firstAttribute="width" constant="172" id="Zbd-WV-2fz"/>
+                                            </constraints>
+                                            <fontDescription key="fontDescription" name="Helvetica" family="Helvetica" pointSize="13"/>
+                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                            <color key="highlightedColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        </label>
+                                        <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="DealLabel" lineBreakMode="tailTruncation" numberOfLines="4" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="152" translatesAutoresizingMaskIntoConstraints="NO" id="90V-eu-Ih3">
+                                            <constraints>
+                                                <constraint firstAttribute="width" constant="152" id="QtD-Ip-VkN"/>
+                                                <constraint firstAttribute="height" constant="55" id="ypM-B9-2dr"/>
+                                            </constraints>
+                                            <fontDescription key="fontDescription" name="Helvetica" family="Helvetica" pointSize="13"/>
                                             <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                             <color key="highlightedColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         </label>
                                     </subviews>
                                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 </view>
+                                <color key="backgroundColor" red="0.17647059261798859" green="0.18823531270027161" blue="0.047058828175067902" alpha="1" colorSpace="deviceRGB"/>
                                 <constraints>
-                                    <constraint firstItem="K8f-vx-uyh" firstAttribute="top" secondItem="xyh-Ov-2Gp" secondAttribute="top" type="default" id="EM6-MN-gqB"/>
-                                    <constraint firstItem="MqO-xp-xXX" firstAttribute="top" secondItem="Wzj-Tx-v4M" secondAttribute="bottom" constant="8" symbolic="YES" type="default" id="LXg-ai-PdK"/>
-                                    <constraint firstItem="MqO-xp-xXX" firstAttribute="leading" secondItem="Wzj-Tx-v4M" secondAttribute="leading" type="default" id="QoH-8M-Zt9"/>
-                                    <constraint firstItem="Wzj-Tx-v4M" firstAttribute="top" secondItem="xyh-Ov-2Gp" secondAttribute="top" constant="20" type="default" id="dbr-Td-hDh"/>
-                                    <constraint firstAttribute="bottom" secondItem="bM2-d6-M1Q" secondAttribute="bottom" constant="7" id="gUu-3u-6ee"/>
-                                    <constraint firstAttribute="trailing" secondItem="Wzj-Tx-v4M" secondAttribute="trailing" constant="20" type="default" id="idA-R5-AAZ"/>
-                                    <constraint firstItem="bM2-d6-M1Q" firstAttribute="leading" secondItem="MqO-xp-xXX" secondAttribute="leading" type="default" id="mtI-52-kLC"/>
-                                    <constraint firstItem="K8f-vx-uyh" firstAttribute="leading" secondItem="xyh-Ov-2Gp" secondAttribute="leading" type="default" id="wB9-b5-8RW"/>
+                                    <constraint firstItem="K8f-vx-uyh" firstAttribute="leading" secondItem="xyh-Ov-2Gp" secondAttribute="leading" constant="12" id="1Ga-Ft-STS"/>
+                                    <constraint firstItem="90V-eu-Ih3" firstAttribute="leading" secondItem="tIl-Le-4MP" secondAttribute="leading" type="default" id="24M-zu-J02"/>
+                                    <constraint firstItem="tIl-Le-4MP" firstAttribute="leading" secondItem="Wzj-Tx-v4M" secondAttribute="leading" type="default" id="4YA-10-UEp"/>
+                                    <constraint firstItem="I0J-zA-C3P" firstAttribute="top" secondItem="xyh-Ov-2Gp" secondAttribute="top" constant="-6" id="6Kr-0i-WSQ"/>
+                                    <constraint firstItem="Wzj-Tx-v4M" firstAttribute="top" secondItem="xyh-Ov-2Gp" secondAttribute="top" constant="10" id="8RY-5I-WAj"/>
+                                    <constraint firstItem="I0J-zA-C3P" firstAttribute="trailing" secondItem="xyh-Ov-2Gp" secondAttribute="trailing" type="default" id="C12-BR-Li4"/>
+                                    <constraint firstItem="tIl-Le-4MP" firstAttribute="top" secondItem="xyh-Ov-2Gp" secondAttribute="top" constant="34" id="PZL-dj-q09"/>
+                                    <constraint firstItem="K8f-vx-uyh" firstAttribute="top" secondItem="I0J-zA-C3P" secondAttribute="bottom" constant="8" symbolic="YES" type="default" id="TsM-fh-2zO"/>
+                                    <constraint firstItem="I0J-zA-C3P" firstAttribute="leading" secondItem="xyh-Ov-2Gp" secondAttribute="leading" type="default" id="W92-9K-V0b"/>
+                                    <constraint firstItem="90V-eu-Ih3" firstAttribute="top" secondItem="xyh-Ov-2Gp" secondAttribute="top" constant="48" id="bmn-qa-WlD"/>
+                                    <constraint firstAttribute="trailing" secondItem="tIl-Le-4MP" secondAttribute="trailing" constant="20" type="default" id="uHK-vX-wbE"/>
                                 </constraints>
                                 <connections>
-                                    <outlet property="AreaLabel" destination="MqO-xp-xXX" id="4gg-tl-zvC"/>
+                                    <outlet property="AllDeal" destination="90V-eu-Ih3" id="YMA-BY-AnS"/>
+                                    <outlet property="AllTime" destination="tIl-Le-4MP" id="mRC-ej-Ta9"/>
                                     <outlet property="BarNameLabel" destination="Wzj-Tx-v4M" id="AFH-h2-Law"/>
                                     <outlet property="Image" destination="K8f-vx-uyh" id="ZJu-Bb-xmp"/>
-                                    <outlet property="addressLabel" destination="bM2-d6-M1Q" id="ZcP-Hf-4yy"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -268,6 +290,7 @@
         </scene>
     </scenes>
     <resources>
+        <image name="line.png" width="199" height="13"/>
         <image name="list.png" width="60" height="44"/>
         <image name="map.png" width="30" height="30"/>
     </resources>
@@ -275,10 +298,10 @@
         <class className="BarTableViewCell" superclassName="UITableViewCell">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/BarTableViewCell.h"/>
             <relationships>
-                <relationship kind="outlet" name="AreaLabel" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="AllDeal" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="AllTime" candidateClass="UILabel"/>
                 <relationship kind="outlet" name="BarNameLabel" candidateClass="UILabel"/>
                 <relationship kind="outlet" name="Image" candidateClass="PFImageView"/>
-                <relationship kind="outlet" name="addressLabel" candidateClass="UILabel"/>
             </relationships>
         </class>
         <class className="CustomTarBarController" superclassName="UITabBarController">
@@ -288,6 +311,7 @@
             <source key="sourceIdentifier" type="project" relativePath="./Classes/DetailViewController.h"/>
             <relationships>
                 <relationship kind="outlet" name="BarMapView" candidateClass="MKMapView"/>
+                <relationship kind="outlet" name="LocationCategoryLable" candidateClass="UILabel"/>
                 <relationship kind="outlet" name="deal" candidateClass="UILabel"/>
                 <relationship kind="outlet" name="name" candidateClass="UILabel"/>
             </relationships>

@@ -11,8 +11,8 @@
 
 @interface BarTableViewCell : UITableViewCell
 @property (weak, nonatomic) IBOutlet UILabel *BarNameLabel;
-@property (weak, nonatomic) IBOutlet UILabel *AreaLabel;
 @property (weak, nonatomic) IBOutlet PFImageView *Image;
-@property (weak, nonatomic) IBOutlet UILabel *addressLabel;
+@property (weak, nonatomic) IBOutlet UILabel *AllTime;
+@property (weak, nonatomic) IBOutlet UILabel *AllDeal;
 
 @end

@@ -62,6 +62,14 @@
     
     // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
     // self.navigationItem.rightBarButtonItem = self.editButtonItem;
+    self.tableView.separatorStyle=UITableViewCellSeparatorStyleNone;
+    
+    
+    // Assign our own backgroud for the view
+    //self.parentViewController.view.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"common_bg"]];
+    //self. = [UIColor clearColor];
+    
+    
 }
 
 - (void)viewDidUnload {
@@ -190,15 +198,14 @@
      }
      
      cell.BarNameLabel.text = [object objectForKey:@"name"];
-     cell.AreaLabel.text = [object objectForKey:@"LocationCategory"];
-     
+     cell.AllTime.text = [object objectForKey:@"AllTime"];
+     cell.AllDeal.text = [object objectForKey:@"AllSpecial"];
      //PFImageView *imageView = [[PFImageView alloc] init];
      
      
      cell.Image.image = [UIImage imageNamed:@"Activity_indicator.png"]; // placeholder image
      
      cell.Image.file = (PFFile *)[object objectForKey:@"image_file"]; // remote image
-     cell.addressLabel.text = [object objectForKey:@"address"];
      [cell.Image loadInBackground];
      
      

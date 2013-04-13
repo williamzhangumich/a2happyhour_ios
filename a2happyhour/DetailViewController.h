@@ -17,5 +17,6 @@
 @property (weak, nonatomic) IBOutlet UILabel *name;
 @property (weak, nonatomic) IBOutlet UILabel *deal;
 @property (weak, nonatomic) IBOutlet MKMapView *BarMapView;
+@property (weak, nonatomic) IBOutlet UILabel *LocationCategoryLable;
 
 @end

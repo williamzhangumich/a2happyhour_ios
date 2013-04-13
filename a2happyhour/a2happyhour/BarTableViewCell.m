@@ -11,15 +11,14 @@
 @implementation BarTableViewCell
 
 @synthesize BarNameLabel = _BarNameLabel;
-@synthesize AreaLabel = _AreaLabel;
 @synthesize Image = _Image;
-@synthesize addressLabel = _addressLabel;
+@synthesize AllTime = _AllTime;
+@synthesize AllDeal = _AllDeal;
 
 - (id)initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString *)reuseIdentifier
 {
     self = [super initWithStyle:style reuseIdentifier:reuseIdentifier];
     if (self) {
-        // Initialization code
     }
     return self;
 }

@@ -16,6 +16,7 @@
 
 @synthesize bar =_bar;
 @synthesize BarMapView = _BarMapView;
+@synthesize LocationCategoryLable=_LocationCategoryLable;
 
 - (void) setBar:(PFObject *)bar{
     if (bar!=_bar) {
@@ -28,6 +29,8 @@
 {
     [super viewDidLoad];
 	// Do any additional setup after loading the view.
+
+    
     
 }
 
@@ -35,6 +38,7 @@
     NSLog(@"%@",[self.bar objectForKey:@"name"]);
     self.name.text = [self.bar objectForKey:@"name"];
     self.deal.text = [self.bar objectForKey:@"AllSpecial"];
+    self.LocationCategoryLable.text= [self.bar objectForKey:@"LocationCategory"];
     
 }
 
