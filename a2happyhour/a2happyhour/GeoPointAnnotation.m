@@ -32,6 +32,7 @@
 
 #pragma mark - MKAnnotation
 
+/*
 // Called when the annotation is dragged and dropped. We update the geoPoint with the new coordinates.
 - (void)setCoordinate:(CLLocationCoordinate2D)newCoordinate {
     PFGeoPoint *geoPoint = [PFGeoPoint geoPointWithLatitude:newCoordinate.latitude longitude:newCoordinate.longitude];
@@ -44,7 +45,7 @@
         }
     }];
 }
-
+*/
 
 #pragma mark - ()
 
@@ -65,8 +66,9 @@
         numberFormatter.numberStyle = NSNumberFormatterDecimalStyle;
         numberFormatter.maximumFractionDigits = 3;
     }
-    _subtitle = [NSString stringWithFormat:@"%@, %@", [numberFormatter stringFromNumber:[NSNumber numberWithDouble:geoPoint.latitude]],
-                 [numberFormatter stringFromNumber:[NSNumber numberWithDouble:geoPoint.longitude]]];
+    _subtitle = [self.object objectForKey:@"AllSpecial"];
+    //_subtitle = [NSString stringWithFormat:@"%@, %@", [numberFormatter stringFromNumber:[NSNumber numberWithDouble:geoPoint.latitude]],
+   //              [numberFormatter stringFromNumber:[NSNumber numberWithDouble:geoPoint.longitude]]];
     
 }
 

@@ -127,7 +127,9 @@
     if (!aView) {
         aView = [[MKPinAnnotationView alloc] initWithAnnotation:annotation reuseIdentifier:@"MapVC"];
         aView.canShowCallout = YES;
+        aView.leftCalloutAccessoryView.frame = CGRectMake(0, 0, 100, 100);
         aView.leftCalloutAccessoryView = [[UIImageView alloc] initWithFrame:CGRectMake(0, 0, 30, 30)];
+        
         // could put a rightCalloutAccessoryView here
     }
     
