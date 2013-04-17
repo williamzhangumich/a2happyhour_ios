@@ -80,14 +80,13 @@
 }
 
 -(void)viewDidAppear:(BOOL)animated{
-    CLLocationCoordinate2D Coordinates = [self.MyLocation coordinate];
     
-    //NSLog(@"%f", Coordinates.latitude);
-    //NSLog(@"%f", Coordinates.longitude);
-    self.BarsMapView.region = MKCoordinateRegionMake(CLLocationCoordinate2DMake(Coordinates.latitude, Coordinates.longitude), MKCoordinateSpanMake(0.01f, 0.01f));
     
-    PFQuery *query = [PFQuery queryWithClassName:@"a2hh"];
-    [query whereKeyExists:@"latlong"];
+    self.BarsMapView.region = MKCoordinateRegionMake(CLLocationCoordinate2DMake(42.279206, -83.745421), MKCoordinateSpanMake(0.01f, 0.011f));
+    
+    
+    PFQuery *query = [PFQuery queryWithClassName:@"a2hh04012013"];
+    [query whereKeyExists:@"latlong_geo"];
     
     [query findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error) {
         if (!error) {
@@ -114,9 +113,19 @@
     }];
 }
 
+- (IBAction)ToMyLocation:(id)sender {
+    
+    CLLocationCoordinate2D Coordinates = [self.MyLocation coordinate];
+    
+    //NSLog(@"%f", Coordinates.latitude);
+    //NSLog(@"%f", Coordinates.longitude);
+    
+    self.BarsMapView.region = MKCoordinateRegionMake(CLLocationCoordinate2DMake(Coordinates.latitude, Coordinates.longitude), MKCoordinateSpanMake(0.01f, 0.01f));
+    
+}
 
 
-- (MKAnnotationView *)mapView:(MKMapView *)mapView viewForAnnotation:(id<MKAnnotation>)annotation
+- (MKAnnotationView *)mapView:(MKMapView *)mapView viewForAnnotation:(GeoPointAnnotation<MKAnnotation>*)annotation
 {
     
     if ([annotation isKindOfClass:[MKUserLocation class]]) {
@@ -127,14 +136,17 @@
     if (!aView) {
         aView = [[MKPinAnnotationView alloc] initWithAnnotation:annotation reuseIdentifier:@"MapVC"];
         aView.canShowCallout = YES;
-        aView.leftCalloutAccessoryView.frame = CGRectMake(0, 0, 100, 100);
-        aView.leftCalloutAccessoryView = [[UIImageView alloc] initWithFrame:CGRectMake(0, 0, 30, 30)];
+        aView.rightCalloutAccessoryView = [UIButton buttonWithType:UIButtonTypeDetailDisclosure];
+        //aView.leftCalloutAccessoryView.frame = CGRectMake(0, 0, 100, 100);
+        //aView.leftCalloutAccessoryView = [[UIImageView alloc] initWithFrame:CGRectMake(0, 0, 30, 30)];
         
         // could put a rightCalloutAccessoryView here
     }
     
     aView.annotation = annotation;
-    [(UIImageView *)aView.leftCalloutAccessoryView setImage:nil];
+    //[(UIImageView *)aView.leftCalloutAccessoryView setImage:nil];
+    
+    
     
     return aView;
    
@@ -143,15 +155,28 @@
 
 - (void)mapView:(MKMapView *)mapView didSelectAnnotationView:(MKAnnotationView *)aView
 {
+    //(GeoPointAnnotation<MKAnnotation> *) GeoAnnotation = aView.annotation;
+    
+    //GeoPointAnnotation* GeoAnnotation =  aView.annotation;
+    //NSLog(@"%@",[GeoAnnotation.object objectForKey:@"name"]);
     //UIImage *image = [self.BarsMapView.delegate mapViewController:self imageForAnnotation:aView.annotation];
     //[(UIImageView *)aView.leftCalloutAccessoryView setImage:image];
 }
 
 - (void)mapView:(MKMapView *)mapView annotationView:(MKAnnotationView *)view calloutAccessoryControlTapped:(UIControl *)control
 {
-    NSLog(@"callout accessory tapped for annotation %@", [view.annotation title]);
+    GeoPointAnnotation* GeoAnnotation =  view.annotation;
+    PFObject* bar = GeoAnnotation.object;
+    
+    [self performSegueWithIdentifier:@"detail" sender:bar];
+    //NSLog(@"tapped for annotation %@", [GeoAnnotation.object objectForKey:@"name"]);
 }
 
+-(void) prepareForSegue:(UIStoryboardSegue *)segue sender:(PFObject*)sender{
+    if ([segue.identifier isEqualToString:@"detail"]) {
+        [(DetailViewController *)segue.destinationViewController setBar:sender];
+    }
+}
 
 #pragma mark - Autorotation
 

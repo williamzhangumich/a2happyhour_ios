@@ -40,9 +40,9 @@
 
 -(void)mapViewDidFinishLoadingMap:(MKMapView *)mapView{
     if (self.bar) {
-        PFGeoPoint *geoPoint = self.bar[@"latlong"];
-        NSLog(@"%f", geoPoint.latitude);
-        NSLog(@"%f", geoPoint.longitude);
+        PFGeoPoint *geoPoint = self.bar[@"latlong_geo"];
+        //NSLog(@"%f", geoPoint.latitude);
+        //NSLog(@"%f", geoPoint.longitude);
         // center our map view around this geopoint
         self.BarMapView.region = MKCoordinateRegionMake(CLLocationCoordinate2DMake(geoPoint.latitude, geoPoint.longitude), MKCoordinateSpanMake(0.01f, 0.01f));
         // add the annotation

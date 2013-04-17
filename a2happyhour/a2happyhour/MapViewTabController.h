@@ -11,6 +11,7 @@
 #import <MapKit/MapKit.h>
 #import <Parse/Parse.h>
 #import "GeoPointAnnotation.h"
+#import "DetailViewController.h"
 
 @interface MapViewTabController : UIViewController
 @property (weak, nonatomic) IBOutlet MKMapView *BarsMapView;

@@ -25,7 +25,7 @@
         // Customize the table
         
         // The className to query on
-        self.className = @"a2hh";
+        self.className = @"a2hh04012013";
         
         // The key of the PFObject to display in the label of the default cell style
         self.textKey = @"name";
@@ -123,7 +123,7 @@
      PFQuery *query = [PFQuery queryWithClassName:self.className];
      //NSLog(@"%@",self.parentViewController);
      
-     [query whereKeyExists:@"latlong"];
+     [query whereKeyExists:@"latlong_geo"];
      NSString *area;
      
      if (self.parentViewController) {

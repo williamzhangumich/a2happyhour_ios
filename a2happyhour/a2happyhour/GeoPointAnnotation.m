@@ -22,7 +22,7 @@
     if (self) {
         _object = aObject;
         
-        PFGeoPoint *geoPoint = self.object[@"latlong"];
+        PFGeoPoint *geoPoint = self.object[@"latlong_geo"];
         [self setGeoPoint:geoPoint];
     }
     return self;
