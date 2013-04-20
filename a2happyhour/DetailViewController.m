@@ -39,10 +39,13 @@
 {
     [super viewDidLoad];
     self.ScrollView.delegate = self;
+
     
     // Set content size
-    self.ScrollView.contentSize = self.ScrollView.frame.size;
-    self.ScrollView.frame = self.view.frame;
+    self.ScrollView.frame = CGRectMake(0, 44, 320, 455);
+
+    self.ScrollView.contentSize = CGSizeMake(320, 780);
+    //self.ScrollView.frame = self.view.frame;
     
     
 	// Do any additional setup after loading the view.
@@ -51,14 +54,33 @@
 
 - (void)viewWillAppear:(BOOL)animated{
     NSLog(@"%@",[self.bar objectForKey:@"name"]);
+    
+    self.ScrollView.backgroundColor = [self getColor:@"222222"];
     self.name.text = [self.bar objectForKey:@"name"];
+    self.name.textColor=[self getColor:@"cc3366"];
+
     self.deal.text = [self.bar objectForKey:@"AllSpecial"];
+    self.deal.textColor=[self getColor:@"FF9900"];
+    
     self.address.text = [self.bar objectForKey:@"address"];
+    self.address.textColor=[self getColor:@"DDDDDD"];
+
+    
     self.contact.text = [self.bar objectForKey:@"Contact"];
+    self.contact.textColor=[self getColor:@"DDDDDD"];
+
     self.regular.text = @"Regular Happy Hour";
-    self.AllTime.text = [self.bar objectForKey:@"AllTime"];    self.name.text = [self.bar objectForKey:@"name"];
+    self.regular.textColor=[self getColor:@"0088CB"];
+
+    self.AllTime.text = [self.bar objectForKey:@"AllTime"];
+    self.AllTime.textColor=[self getColor:@"CC3300"];
+    
     self.premiun.text = @"Premiun Member";
+    self.premiun.textColor=[self getColor:@"0088CB"];
+
     self.discount.text = @"Premiun discount Member";
+    self.AllTime.textColor=[self getColor:@"FF9900"];
+
 }
 
 -(void)mapViewDidFinishLoadingMap:(MKMapView *)mapView{
@@ -74,5 +96,25 @@
         
     }
 }
+
+// HEX Color to RGB Color
+- (UIColor *)getColor:(NSString *)hexColor
+{
+	unsigned int red,green,blue;
+	NSRange range;
+	range.length = 2;
+	
+	range.location = 0;
+	[[NSScanner scannerWithString:[hexColor substringWithRange:range]] scanHexInt:&red];
+	
+	range.location = 2;
+	[[NSScanner scannerWithString:[hexColor substringWithRange:range]] scanHexInt:&green];
+	
+	range.location = 4;
+	[[NSScanner scannerWithString:[hexColor substringWithRange:range]] scanHexInt:&blue];
+	
+	return [UIColor colorWithRed:(float)(red/255.0f) green:(float)(green / 255.0f) blue:(float)(blue / 255.0f) alpha:1.0f];
+}
+
 
 @end
