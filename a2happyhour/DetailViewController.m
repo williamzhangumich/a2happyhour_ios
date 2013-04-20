@@ -8,7 +8,7 @@
 
 #import "DetailViewController.h"
 
-@interface DetailViewController ()
+@interface DetailViewController ()<UIScrollViewDelegate>
 
 @end
 
@@ -16,6 +16,7 @@
 
 @synthesize bar =_bar;
 @synthesize BarMapView = _BarMapView;
+@synthesize ScrollView = _ScrollView;
 
 - (void) setBar:(PFObject *)bar{
     if (bar!=_bar) {
@@ -27,6 +28,13 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    self.ScrollView.delegate = self;
+    
+    // Set content size
+    //self.ScrollView.contentSize = self.ContainerView.frame.size;
+    //self.ScrollView.frame = self.view.frame;
+    
+    
 	// Do any additional setup after loading the view.
     
 }
