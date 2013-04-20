@@ -129,25 +129,42 @@
      
      if (self.parentViewController) {
          ListViewTabController *parent = (ListViewTabController *)self.parentViewController;
-         NSString *text = parent.locationText.text;
+         //NSString *text = parent.locationText.text;
          
          NSString* day = parent.DayFilterBtn.titleLabel.text;
          NSString* area = parent.AreaFilterBtn.titleLabel.text;
          NSString* type = parent.TypeFilterBtn.titleLabel.text;
          
-         NSLog(@"%@ %@ %@ ", day, area, type);
+         //NSLog(@"%@ %@ %@ ", day, area, type);
          
-         if (text.length>0) {
+         if ((![area isEqualToString:@"Any"])&&(![area isEqualToString:@"AREA"])) {
              //NSLog(@"%@",text);
-             area = text;
-             //[query whereKey:@"LocationCategory" equalTo:area];
-             
-             return query;
+             //area = text;
+             [query whereKey:@"LocationCategory" equalTo:area];
+             //return query;
          }
          else{
-             //NSLog(@"no atext");
-             return query;
+             NSLog(@"No specification for area");
+             //return query;
          }
+         
+         if ((![day isEqualToString:@"Any"])&&(![day isEqualToString:@"DAY"])) {
+             //NSLog(@"%@",text);
+             //area = text;
+             
+             NSString* DayofWeek = [[day substringToIndex:3] stringByAppendingString:@"Special"];
+             NSLog(@"%@",DayofWeek);
+             
+             [query whereKeyExists:DayofWeek];
+             //return query;
+         }
+         else{
+             NSLog(@"day:%@",day);
+             NSLog(@"no specification for day");
+             //return query;
+         }
+         
+         return query;
          
      }
      

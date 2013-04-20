@@ -88,6 +88,7 @@
     [self.TypeFilter setHidden:YES];
     
     //NSLog(@"%@", [self.childViewControllers objectAtIndex:0]);
+    
     [(MainTableViewController *)[self.childViewControllers objectAtIndex:0] loadObjects];
 }
 
@@ -130,7 +131,6 @@
 
     
 }
-
 
 
 // HEX Color to RGB Color
