@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="2.0" toolsVersion="3084" systemVersion="12D78" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="lJX-n2-d81">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="2.0" toolsVersion="3084" systemVersion="11G63" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="lJX-n2-d81">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="2083"/>
     </dependencies>
@@ -49,7 +49,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="TSJ-TI-dI6" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1141" y="459"/>
+            <point key="canvasLocation" x="1269" y="390"/>
         </scene>
         <!--Detail View Controller-->
         <scene sceneID="8hZ-Sz-0Bf">
@@ -376,32 +376,33 @@
                                 </subviews>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <constraints>
-                                    <constraint firstAttribute="bottom" secondItem="jgZ-9r-98y" secondAttribute="bottom" constant="108" id="28q-hE-2MB"/>
                                     <constraint firstItem="m1f-0s-540" firstAttribute="leading" secondItem="pVG-pd-6Vh" secondAttribute="leading" type="default" id="2xc-gR-Iq3"/>
-                                    <constraint firstAttribute="bottom" secondItem="pVG-pd-6Vh" secondAttribute="bottom" constant="73" id="3JM-VM-W03"/>
                                     <constraint firstItem="pVG-pd-6Vh" firstAttribute="leading" secondItem="jgZ-9r-98y" secondAttribute="leading" type="default" id="46p-ac-fOU"/>
-                                    <constraint firstAttribute="bottom" secondItem="m1f-0s-540" secondAttribute="bottom" constant="38" id="AGb-il-B99"/>
+                                    <constraint firstAttribute="bottom" secondItem="fGf-vL-ARf" secondAttribute="bottom" constant="2" id="8hm-US-R16"/>
+                                    <constraint firstItem="9qz-Cy-3H1" firstAttribute="top" secondItem="JWa-VR-1nU" secondAttribute="top" constant="112" id="EMo-Xc-pBe"/>
                                     <constraint firstItem="ocy-1I-kNr" firstAttribute="trailing" secondItem="Ler-17-sg9" secondAttribute="trailing" type="default" id="Evg-pa-o0J"/>
                                     <constraint firstItem="kWb-3J-iTi" firstAttribute="bottom" secondItem="JWa-VR-1nU" secondAttribute="bottom" type="default" id="FLX-5e-gqg"/>
+                                    <constraint firstAttribute="bottom" secondItem="pVG-pd-6Vh" secondAttribute="bottom" constant="73" id="Hii-Vh-vBW"/>
                                     <constraint firstItem="jgZ-9r-98y" firstAttribute="trailing" secondItem="9qz-Cy-3H1" secondAttribute="trailing" type="default" id="IT9-Es-a1C"/>
                                     <constraint firstItem="9qz-Cy-3H1" firstAttribute="leading" secondItem="J4L-sc-RRW" secondAttribute="leading" type="default" id="JMG-Ts-3x3"/>
                                     <constraint firstItem="kWb-3J-iTi" firstAttribute="trailing" secondItem="JWa-VR-1nU" secondAttribute="trailing" type="default" id="KJc-bo-NAJ"/>
                                     <constraint firstItem="jgZ-9r-98y" firstAttribute="leading" secondItem="9qz-Cy-3H1" secondAttribute="leading" type="default" id="MFL-se-zRY"/>
+                                    <constraint firstItem="ocy-1I-kNr" firstAttribute="top" secondItem="JWa-VR-1nU" secondAttribute="top" constant="42" id="S8j-4a-TNq"/>
                                     <constraint firstItem="fGf-vL-ARf" firstAttribute="leading" secondItem="m1f-0s-540" secondAttribute="leading" type="default" id="SqD-jr-wY1"/>
-                                    <constraint firstItem="J4L-sc-RRW" firstAttribute="top" secondItem="JWa-VR-1nU" secondAttribute="top" constant="84" id="bOi-L8-a3K"/>
-                                    <constraint firstItem="Ler-17-sg9" firstAttribute="top" secondItem="JWa-VR-1nU" secondAttribute="top" constant="14" id="f2w-AV-xJA"/>
+                                    <constraint firstAttribute="bottom" secondItem="jgZ-9r-98y" secondAttribute="bottom" constant="109" id="ZEB-eN-fc1"/>
+                                    <constraint firstItem="J4L-sc-RRW" firstAttribute="top" secondItem="JWa-VR-1nU" secondAttribute="top" constant="77" id="ajh-NB-nly"/>
+                                    <constraint firstItem="fGf-vL-ARf" firstAttribute="centerX" secondItem="kWb-3J-iTi" secondAttribute="centerX" type="default" id="bV7-7u-1W0"/>
                                     <constraint firstItem="pVG-pd-6Vh" firstAttribute="trailing" secondItem="jgZ-9r-98y" secondAttribute="trailing" type="default" id="hAy-2V-8AC"/>
                                     <constraint firstItem="m1f-0s-540" firstAttribute="trailing" secondItem="pVG-pd-6Vh" secondAttribute="trailing" type="default" id="jHR-fl-yDe"/>
-                                    <constraint firstItem="fGf-vL-ARf" firstAttribute="centerX" secondItem="kWb-3J-iTi" secondAttribute="centerX" type="default" id="jJf-94-BFo"/>
-                                    <constraint firstAttribute="bottom" secondItem="fGf-vL-ARf" secondAttribute="bottom" constant="3" id="kdc-55-c61"/>
+                                    <constraint firstItem="Ler-17-sg9" firstAttribute="top" secondItem="JWa-VR-1nU" secondAttribute="top" constant="7" id="nnD-MG-dVf"/>
                                     <constraint firstItem="kWb-3J-iTi" firstAttribute="leading" secondItem="JWa-VR-1nU" secondAttribute="leading" type="default" id="ojl-CS-uY1"/>
                                     <constraint firstItem="J4L-sc-RRW" firstAttribute="leading" secondItem="ocy-1I-kNr" secondAttribute="leading" type="default" id="qaD-2M-whn"/>
                                     <constraint firstItem="J4L-sc-RRW" firstAttribute="trailing" secondItem="ocy-1I-kNr" secondAttribute="trailing" type="default" id="rMC-1c-hFi"/>
-                                    <constraint firstItem="9qz-Cy-3H1" firstAttribute="top" secondItem="JWa-VR-1nU" secondAttribute="top" constant="119" id="sbc-bS-mQr"/>
                                     <constraint firstItem="fGf-vL-ARf" firstAttribute="trailing" secondItem="m1f-0s-540" secondAttribute="trailing" type="default" id="u0z-aV-gNU"/>
+                                    <constraint firstAttribute="bottom" secondItem="m1f-0s-540" secondAttribute="bottom" constant="37" id="vSx-kg-Qkn"/>
                                     <constraint firstItem="9qz-Cy-3H1" firstAttribute="trailing" secondItem="J4L-sc-RRW" secondAttribute="trailing" type="default" id="wnR-SA-9Kx"/>
                                     <constraint firstItem="ocy-1I-kNr" firstAttribute="leading" secondItem="Ler-17-sg9" secondAttribute="leading" type="default" id="xcy-J5-lAR"/>
-                                    <constraint firstItem="ocy-1I-kNr" firstAttribute="top" secondItem="JWa-VR-1nU" secondAttribute="top" constant="49" id="zpZ-o9-TaB"/>
+                                    <constraint firstItem="kWb-3J-iTi" firstAttribute="top" secondItem="JWa-VR-1nU" secondAttribute="top" type="default" id="yFg-TC-gVe"/>
                                 </constraints>
                             </view>
                             <view hidden="YES" tag="2" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="W3w-35-1s7" userLabel="AreaFilterView">
@@ -780,11 +781,10 @@
                             <constraint firstItem="CDj-ws-RXN" firstAttribute="top" secondItem="nD2-pW-wxZ" secondAttribute="top" constant="47" id="CZ4-Jh-cqq"/>
                             <constraint firstItem="W3w-35-1s7" firstAttribute="leading" secondItem="JWa-VR-1nU" secondAttribute="trailing" constant="8" symbolic="YES" type="default" id="E73-K6-bGf"/>
                             <constraint firstItem="L0v-Vb-sF7" firstAttribute="centerX" secondItem="isg-5v-a53" secondAttribute="centerX" type="default" id="Ii0-iO-27j"/>
-                            <constraint firstAttribute="bottom" secondItem="JWa-VR-1nU" secondAttribute="bottom" constant="135" id="TLe-ug-uwR"/>
-                            <constraint firstItem="W3w-35-1s7" firstAttribute="top" secondItem="nD2-pW-wxZ" secondAttribute="top" constant="30" id="TpZ-XY-iJD"/>
                             <constraint firstItem="L0v-Vb-sF7" firstAttribute="baseline" secondItem="8E9-Ah-CiN" secondAttribute="baseline" type="default" id="XQa-ff-8Tp"/>
                             <constraint firstItem="isg-5v-a53" firstAttribute="leading" secondItem="W3w-35-1s7" secondAttribute="trailing" constant="8" symbolic="YES" type="default" id="Yjm-Gs-qt9"/>
                             <constraint firstItem="JWa-VR-1nU" firstAttribute="centerX" secondItem="iNk-x9-ZUT" secondAttribute="centerX" type="default" id="aUX-LM-ipF"/>
+                            <constraint firstItem="JWa-VR-1nU" firstAttribute="top" secondItem="W3w-35-1s7" secondAttribute="top" type="default" id="bLE-fl-g2G"/>
                             <constraint firstItem="XWG-6T-MH3" firstAttribute="baseline" secondItem="iNk-x9-ZUT" secondAttribute="baseline" type="default" id="e58-3p-owI"/>
                             <constraint firstItem="XWG-6T-MH3" firstAttribute="baseline" secondItem="8E9-Ah-CiN" secondAttribute="baseline" type="default" id="i9y-r6-Lj8"/>
                             <constraint firstItem="iNk-x9-ZUT" firstAttribute="leading" secondItem="nD2-pW-wxZ" secondAttribute="leading" constant="4" id="lb4-lg-A5G"/>
@@ -793,7 +793,7 @@
                             <constraint firstAttribute="trailing" secondItem="8E9-Ah-CiN" secondAttribute="trailing" constant="10" id="s3H-kF-acE"/>
                             <constraint firstItem="CDj-ws-RXN" firstAttribute="trailing" secondItem="nD2-pW-wxZ" secondAttribute="trailing" type="default" id="vny-46-Sxq"/>
                             <constraint firstItem="CDj-ws-RXN" firstAttribute="bottom" secondItem="nD2-pW-wxZ" secondAttribute="bottom" type="default" id="wBE-f2-lpv"/>
-                            <constraint firstItem="JWa-VR-1nU" firstAttribute="top" secondItem="nD2-pW-wxZ" secondAttribute="top" constant="24" id="yjO-IW-kEi"/>
+                            <constraint firstItem="JWa-VR-1nU" firstAttribute="top" secondItem="nD2-pW-wxZ" secondAttribute="top" constant="30" id="yXW-ad-N0T"/>
                             <constraint firstItem="iNk-x9-ZUT" firstAttribute="top" secondItem="nD2-pW-wxZ" secondAttribute="top" constant="7" id="yrq-7y-PlL"/>
                         </constraints>
                     </view>
@@ -857,9 +857,73 @@
         <image name="filter-bg2.png" width="97" height="255"/>
         <image name="filterbox.png" width="100" height="31"/>
         <image name="line.png" width="199" height="13"/>
-        <image name="list.png" width="60" height="44"/>
+        <image name="list.png" width="30" height="22"/>
         <image name="map.png" width="30" height="30"/>
     </resources>
+    <classes>
+        <class className="BarTableViewCell" superclassName="UITableViewCell">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/BarTableViewCell.h"/>
+            <relationships>
+                <relationship kind="outlet" name="AllSpecial" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="AllTime" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="BarNameLabel" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="Image" candidateClass="PFImageView"/>
+            </relationships>
+        </class>
+        <class className="CustomNaviBarController" superclassName="UINavigationController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/CustomNaviBarController.h"/>
+        </class>
+        <class className="CustomTarBarController" superclassName="UITabBarController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/CustomTarBarController.h"/>
+        </class>
+        <class className="DetailViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/DetailViewController.h"/>
+            <relationships>
+                <relationship kind="outlet" name="BarMapView" candidateClass="MKMapView"/>
+                <relationship kind="outlet" name="deal" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="name" candidateClass="UILabel"/>
+            </relationships>
+        </class>
+        <class className="ListViewTabController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/ListViewTabController.h"/>
+            <relationships>
+                <relationship kind="action" name="SelectArea:"/>
+                <relationship kind="action" name="SelectDay:"/>
+                <relationship kind="action" name="SelectType:"/>
+                <relationship kind="action" name="SetFilter:" candidateClass="UIButton"/>
+                <relationship kind="outlet" name="AreaFilter" candidateClass="UIView"/>
+                <relationship kind="outlet" name="AreaFilterBtn" candidateClass="UIButton"/>
+                <relationship kind="outlet" name="DayFilter" candidateClass="UIView"/>
+                <relationship kind="outlet" name="DayFilterBtn" candidateClass="UIButton"/>
+                <relationship kind="outlet" name="TableViewContainer" candidateClass="UIView"/>
+                <relationship kind="outlet" name="TypeFilter" candidateClass="UIView"/>
+                <relationship kind="outlet" name="TypeFilterBtn" candidateClass="UIButton"/>
+                <relationship kind="outlet" name="locationText" candidateClass="UITextField"/>
+            </relationships>
+        </class>
+        <class className="MainTableViewController" superclassName="PFQueryTableViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/MainTableViewController.h"/>
+            <relationships>
+                <relationship kind="outlet" name="customTableView" candidateClass="UITableView"/>
+            </relationships>
+        </class>
+        <class className="MapViewTabController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/MapViewTabController.h"/>
+            <relationships>
+                <relationship kind="action" name="ToMyLocation:"/>
+                <relationship kind="outlet" name="BarsMapView" candidateClass="MKMapView"/>
+            </relationships>
+        </class>
+        <class className="NSLayoutConstraint" superclassName="NSObject">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/NSLayoutConstraint.h"/>
+        </class>
+        <class className="PFImageView" superclassName="UIImageView">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/PFImageView.h"/>
+        </class>
+        <class className="PFQueryTableViewController" superclassName="UITableViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/PFQueryTableViewController.h"/>
+        </class>
+    </classes>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>
         <simulatedOrientationMetrics key="orientation"/>

@@ -120,19 +120,27 @@
  // Override to customize what kind of query to perform on the class. The default is to query for
  // all objects ordered by createdAt descending.
  - (PFQuery *)queryForTable {
+     
      PFQuery *query = [PFQuery queryWithClassName:self.className];
      //NSLog(@"%@",self.parentViewController);
      
      [query whereKeyExists:@"latlong_geo"];
-     NSString *area;
+     
      
      if (self.parentViewController) {
          ListViewTabController *parent = (ListViewTabController *)self.parentViewController;
          NSString *text = parent.locationText.text;
+         
+         NSString* day = parent.DayFilterBtn.titleLabel.text;
+         NSString* area = parent.AreaFilterBtn.titleLabel.text;
+         NSString* type = parent.TypeFilterBtn.titleLabel.text;
+         
+         NSLog(@"%@ %@ %@ ", day, area, type);
+         
          if (text.length>0) {
              //NSLog(@"%@",text);
              area = text;
-             [query whereKey:@"LocationCategory" equalTo:area];
+             //[query whereKey:@"LocationCategory" equalTo:area];
              
              return query;
          }
