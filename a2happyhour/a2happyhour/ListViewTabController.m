@@ -21,17 +21,71 @@
 @synthesize DayFilterBtn = _DayFilterBtn;
 @synthesize AreaFilterBtn = _AreaFilterBtn;
 @synthesize TypeFilterBtn = _TypeFilterBtn;
-@synthesize DayFilterBox = _DayFilterBox;
+
+@synthesize DayFilter = _DayFilter;
+@synthesize AreaFilter = _AreaFilter;
+@synthesize TypeFilter = _TypeFilter;
+
+
 
 
 - (IBAction)SelectDay:(id)sender {
     
     
-    if (self.DayFilterBox.hidden) {
-        [self.DayFilterBox setHidden:NO];
+    if (self.DayFilter.hidden) {
+        [self.DayFilter setHidden:NO];
+        [self.AreaFilter setHidden:YES];
+        [self.TypeFilter setHidden:YES];
     }else{
-        [self.DayFilterBox setHidden:YES];
+        [self.DayFilter setHidden:YES];
     }
+}
+
+- (IBAction)SelectArea:(id)sender {
+    if (self.AreaFilter.hidden) {
+        [self.AreaFilter setHidden:NO];
+        [self.DayFilter setHidden:YES];
+        [self.TypeFilter setHidden:YES];
+    }else{
+        [self.AreaFilter setHidden:YES];
+    }
+    
+}
+
+- (IBAction)SelectType:(id)sender {
+    if (self.TypeFilter.hidden) {
+        [self.TypeFilter setHidden:NO];
+        [self.DayFilter setHidden:YES];
+        [self.AreaFilter setHidden:YES];
+    }else{
+        [self.TypeFilter setHidden:YES];
+    }
+}
+
+- (IBAction)SetFilter:(UIButton*)sender {
+    
+    
+    switch (sender.superview.tag) {
+        case 1:
+          
+            [self.DayFilterBtn setTitle:sender.titleLabel.text forState:UIControlStateNormal];
+            break;
+        case 2:
+           
+            [self.AreaFilterBtn setTitle:sender.titleLabel.text forState:UIControlStateNormal];
+            break;
+        case 3:
+           
+            [self.TypeFilterBtn setTitle:sender.titleLabel.text forState:UIControlStateNormal];
+            break;
+            
+        default:
+            break;
+    }
+    
+    [self.DayFilter setHidden:YES];
+    [self.AreaFilter setHidden:YES];
+    [self.TypeFilter setHidden:YES];
 }
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil

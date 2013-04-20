@@ -17,6 +17,11 @@
 @property (weak, nonatomic) IBOutlet UIButton *DayFilterBtn;
 @property (weak, nonatomic) IBOutlet UIButton *AreaFilterBtn;
 @property (weak, nonatomic) IBOutlet UIButton *TypeFilterBtn;
-@property (weak, nonatomic) IBOutlet UITableView *DayFilterBox;
+
+@property (weak, nonatomic) IBOutlet UIView *DayFilter;
+@property (weak, nonatomic) IBOutlet UIView *AreaFilter;
+@property (weak, nonatomic) IBOutlet UIView *TypeFilter;
+
+
 
 @end
