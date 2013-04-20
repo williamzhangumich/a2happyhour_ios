@@ -59,9 +59,6 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="408"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="gVx-TZ-xco">
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
-                            </view>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="TrC-w3-x05">
                                 <subviews>
                                     <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="K7d-0V-eU0">
@@ -159,19 +156,19 @@
                                 <constraints>
                                     <constraint firstItem="CQX-Tw-l23" firstAttribute="top" secondItem="TrC-w3-x05" secondAttribute="top" constant="321" id="06v-hI-oay"/>
                                     <constraint firstItem="CUH-3z-y8H" firstAttribute="leading" secondItem="TrC-w3-x05" secondAttribute="leading" constant="20" symbolic="YES" type="default" id="2Ej-sf-9D8"/>
+                                    <constraint firstItem="wsy-6B-Duh" firstAttribute="top" secondItem="TrC-w3-x05" secondAttribute="top" constant="540" id="4VP-Kd-qlf"/>
                                     <constraint firstItem="1EX-Lh-jWl" firstAttribute="leading" secondItem="TrC-w3-x05" secondAttribute="leading" type="default" id="5Ig-nH-4X0"/>
                                     <constraint firstItem="1vb-Qb-ce5" firstAttribute="top" secondItem="TrC-w3-x05" secondAttribute="top" constant="468" id="HQH-UY-lvK"/>
                                     <constraint firstItem="1vb-Qb-ce5" firstAttribute="leading" secondItem="TrC-w3-x05" secondAttribute="leading" constant="20" symbolic="YES" type="default" id="I6U-2c-KU7"/>
                                     <constraint firstItem="N3K-oe-iLp" firstAttribute="baseline" secondItem="KIq-2d-Nbn" secondAttribute="baseline" type="default" id="IJK-X5-7MV"/>
                                     <constraint firstItem="DKR-LI-lfa" firstAttribute="leading" secondItem="quh-ok-TXA" secondAttribute="leading" type="default" id="IZc-v8-QAv"/>
+                                    <constraint firstItem="wsy-6B-Duh" firstAttribute="centerX" secondItem="TrC-w3-x05" secondAttribute="centerX" type="default" id="KFm-1J-2WW"/>
                                     <constraint firstItem="PaC-RW-QcZ" firstAttribute="leading" secondItem="TrC-w3-x05" secondAttribute="leading" constant="20" symbolic="YES" type="default" id="Lcf-uC-q6g"/>
                                     <constraint firstItem="PaC-RW-QcZ" firstAttribute="top" secondItem="TrC-w3-x05" secondAttribute="top" constant="299" id="Mjs-gk-7wr"/>
                                     <constraint firstItem="PaC-RW-QcZ" firstAttribute="trailing" secondItem="CUH-3z-y8H" secondAttribute="trailing" type="default" id="OYQ-eV-GPZ"/>
                                     <constraint firstItem="K7d-0V-eU0" firstAttribute="leading" secondItem="TrC-w3-x05" secondAttribute="leading" constant="201" id="Q7a-Po-3tb"/>
                                     <constraint firstItem="quh-ok-TXA" firstAttribute="leading" secondItem="TrC-w3-x05" secondAttribute="leading" constant="92" id="Qiu-78-43s"/>
-                                    <constraint firstAttribute="trailing" secondItem="N3K-oe-iLp" secondAttribute="trailing" constant="17" id="QuW-ez-gYj"/>
                                     <constraint firstItem="DKR-LI-lfa" firstAttribute="top" secondItem="TrC-w3-x05" secondAttribute="top" constant="508" id="RZ5-sy-OYb"/>
-                                    <constraint firstItem="wsy-6B-Duh" firstAttribute="top" secondItem="TrC-w3-x05" secondAttribute="top" constant="520" id="S50-VQ-2F0"/>
                                     <constraint firstItem="wsy-6B-Duh" firstAttribute="leading" secondItem="TrC-w3-x05" secondAttribute="leading" type="default" id="SQh-8Y-W7o"/>
                                     <constraint firstItem="K7d-0V-eU0" firstAttribute="top" secondItem="TrC-w3-x05" secondAttribute="top" constant="545" id="ShO-g1-W7h"/>
                                     <constraint firstItem="CQX-Tw-l23" firstAttribute="leading" secondItem="TrC-w3-x05" secondAttribute="leading" constant="10" id="UOM-ti-cYP"/>
@@ -194,14 +191,10 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstAttribute="bottom" secondItem="gVx-TZ-xco" secondAttribute="bottom" constant="100" id="HmD-4i-YrS"/>
                             <constraint firstItem="TrC-w3-x05" firstAttribute="trailing" secondItem="5yR-a0-Bbs" secondAttribute="trailing" type="default" id="Lhv-gA-Cfj"/>
                             <constraint firstItem="TrC-w3-x05" firstAttribute="leading" secondItem="5yR-a0-Bbs" secondAttribute="leading" type="default" id="Rhb-a0-2CO"/>
                             <constraint firstAttribute="bottom" secondItem="TrC-w3-x05" secondAttribute="bottom" constant="-245" id="XRr-6S-MKD"/>
                             <constraint firstItem="TrC-w3-x05" firstAttribute="top" secondItem="5yR-a0-Bbs" secondAttribute="top" type="default" id="YSc-iN-SkC"/>
-                            <constraint firstItem="gVx-TZ-xco" firstAttribute="leading" secondItem="5yR-a0-Bbs" secondAttribute="leading" constant="189" id="gia-C5-h7g"/>
-                            <constraint firstAttribute="trailing" secondItem="gVx-TZ-xco" secondAttribute="trailing" constant="-29" id="nYp-GA-IZE"/>
-                            <constraint firstItem="gVx-TZ-xco" firstAttribute="top" secondItem="5yR-a0-Bbs" secondAttribute="top" constant="127" id="rCq-HW-Dd0"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="KLR-cx-a0W"/>
@@ -559,73 +552,8 @@
         <image name="filterbox.png" width="100" height="31"/>
         <image name="line.png" width="199" height="13"/>
         <image name="list.png" width="30" height="22"/>
-        <image name="map.png" width="30" height="30"/>
+        <image name="map.png" width="60" height="60"/>
     </resources>
-    <classes>
-        <class className="BarTableViewCell" superclassName="UITableViewCell">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/BarTableViewCell.h"/>
-            <relationships>
-                <relationship kind="outlet" name="AllSpecial" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="AllTime" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="BarNameLabel" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="Image" candidateClass="PFImageView"/>
-            </relationships>
-        </class>
-        <class className="CustomNaviBarController" superclassName="UINavigationController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/CustomNaviBarController.h"/>
-        </class>
-        <class className="CustomTarBarController" superclassName="UITabBarController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/CustomTarBarController.h"/>
-        </class>
-        <class className="DetailViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/DetailViewController.h"/>
-            <relationships>
-                <relationship kind="outlet" name="AllTime" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="BarMapView" candidateClass="MKMapView"/>
-                <relationship kind="outlet" name="ScrollView" candidateClass="UIScrollView"/>
-                <relationship kind="outlet" name="address" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="contact" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="deal" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="discount" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="name" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="premiun" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="regular" candidateClass="UILabel"/>
-            </relationships>
-        </class>
-        <class className="ListViewTabController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/ListViewTabController.h"/>
-            <relationships>
-                <relationship kind="action" name="SelectDay:"/>
-                <relationship kind="outlet" name="AreaFilterBtn" candidateClass="UIButton"/>
-                <relationship kind="outlet" name="DayFilterBox" candidateClass="UITableView"/>
-                <relationship kind="outlet" name="DayFilterBtn" candidateClass="UIButton"/>
-                <relationship kind="outlet" name="TableViewContainer" candidateClass="UIView"/>
-                <relationship kind="outlet" name="TypeFilterBtn" candidateClass="UIButton"/>
-                <relationship kind="outlet" name="locationText" candidateClass="UITextField"/>
-            </relationships>
-        </class>
-        <class className="MainTableViewController" superclassName="PFQueryTableViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/MainTableViewController.h"/>
-            <relationships>
-                <relationship kind="outlet" name="customTableView" candidateClass="UITableView"/>
-            </relationships>
-        </class>
-        <class className="MapViewTabController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/MapViewTabController.h"/>
-            <relationships>
-                <relationship kind="outlet" name="BarsMapView" candidateClass="MKMapView"/>
-            </relationships>
-        </class>
-        <class className="NSLayoutConstraint" superclassName="NSObject">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/NSLayoutConstraint.h"/>
-        </class>
-        <class className="PFImageView" superclassName="UIImageView">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/PFImageView.h"/>
-        </class>
-        <class className="PFQueryTableViewController" superclassName="UITableViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/PFQueryTableViewController.h"/>
-        </class>
-    </classes>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>
         <simulatedOrientationMetrics key="orientation"/>

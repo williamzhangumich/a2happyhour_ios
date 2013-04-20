@@ -7,6 +7,7 @@
 //
 
 #import "DetailViewController.h"
+#import "ListViewTabController.h"
 
 @interface DetailViewController ()<UIScrollViewDelegate>
 
@@ -39,14 +40,27 @@
 {
     [super viewDidLoad];
     self.ScrollView.delegate = self;
-
+    
+//    if (self.parentViewController) {
+//        ListViewTabController *parent = (ListViewTabController *)self.parentViewController;
+//        parent.TableViewContainer.frame=CGRectMake(0, 0, 320, 455);
+//    }
+    
+    
+    NSLog(@"%f,%f,%f,%f",self.view.frame.origin.x,self.view.frame.origin.y,self.view.frame.size.height,self.view.frame.size.width);
+    
+    NSLog(@"%f,%f,%f,%f",self.ScrollView.frame.origin.x,self.ScrollView.frame.origin.y,self.ScrollView.frame.size.height,self.ScrollView.frame.size.width);
+    NSLog(@"%f,%f",self.ScrollView.contentSize.height,self.ScrollView.contentSize.width);
+    
     
     // Set content size
-    self.ScrollView.frame = CGRectMake(0, 44, 320, 455);
+    self.ScrollView.frame = CGRectMake(0, 0, 320, 455);
 
-    self.ScrollView.contentSize = CGSizeMake(320, 780);
+    self.ScrollView.contentSize = CGSizeMake(320, 280);
     //self.ScrollView.frame = self.view.frame;
     
+    NSLog(@"%f,%f,%f,%f",self.ScrollView.frame.origin.x,self.ScrollView.frame.origin.y,self.ScrollView.frame.size.height,self.ScrollView.frame.size.width);
+    NSLog(@"%f,%f",self.ScrollView.contentSize.height,self.ScrollView.contentSize.width);
     
 	// Do any additional setup after loading the view.
     
@@ -57,7 +71,7 @@
     
     self.ScrollView.backgroundColor = [self getColor:@"222222"];
     self.name.text = [self.bar objectForKey:@"name"];
-    self.name.textColor=[self getColor:@"cc3366"];
+    self.name.textColor=[self getColor:@"33CC66"];
 
     self.deal.text = [self.bar objectForKey:@"AllSpecial"];
     self.deal.textColor=[self getColor:@"FF9900"];
@@ -79,7 +93,7 @@
     self.premiun.textColor=[self getColor:@"0088CB"];
 
     self.discount.text = @"Premiun discount Member";
-    self.AllTime.textColor=[self getColor:@"FF9900"];
+    self.discount.textColor=[self getColor:@"FF9900"];
 
 }
 
