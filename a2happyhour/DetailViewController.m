@@ -17,6 +17,16 @@
 @synthesize bar =_bar;
 @synthesize BarMapView = _BarMapView;
 @synthesize ScrollView = _ScrollView;
+@synthesize name = _name;
+@synthesize deal = _deal;
+@synthesize address = _address;
+@synthesize contact = _contact;
+@synthesize regular = _regular;
+@synthesize AllTime = _AllTime;
+@synthesize premiun = _premiun;
+@synthesize discount = _discount;
+
+
 
 - (void) setBar:(PFObject *)bar{
     if (bar!=_bar) {
@@ -31,8 +41,8 @@
     self.ScrollView.delegate = self;
     
     // Set content size
-    //self.ScrollView.contentSize = self.ContainerView.frame.size;
-    //self.ScrollView.frame = self.view.frame;
+    self.ScrollView.contentSize = self.ScrollView.frame.size;
+    self.ScrollView.frame = self.view.frame;
     
     
 	// Do any additional setup after loading the view.
@@ -43,7 +53,12 @@
     NSLog(@"%@",[self.bar objectForKey:@"name"]);
     self.name.text = [self.bar objectForKey:@"name"];
     self.deal.text = [self.bar objectForKey:@"AllSpecial"];
-    
+    self.address.text = [self.bar objectForKey:@"address"];
+    self.contact.text = [self.bar objectForKey:@"Contact"];
+    self.regular.text = @"Regular Happy Hour";
+    self.AllTime.text = [self.bar objectForKey:@"AllTime"];    self.name.text = [self.bar objectForKey:@"name"];
+    self.premiun.text = @"Premiun Member";
+    self.discount.text = @"Premiun discount Member";
 }
 
 -(void)mapViewDidFinishLoadingMap:(MKMapView *)mapView{

@@ -18,6 +18,12 @@
 @property (weak, nonatomic) IBOutlet UILabel *deal;
 @property (weak, nonatomic) IBOutlet MKMapView *BarMapView;
 @property (weak, nonatomic) IBOutlet UIScrollView *ScrollView;
+@property (weak, nonatomic) IBOutlet UILabel *address;
+@property (weak, nonatomic) IBOutlet UILabel *contact;
+@property (weak, nonatomic) IBOutlet UILabel *regular;
+@property (weak, nonatomic) IBOutlet UILabel *AllTime;
+@property (weak, nonatomic) IBOutlet UILabel *premiun;
+@property (weak, nonatomic) IBOutlet UILabel *discount;
 
 
 //@property (weak, nonatomic) IBOutlet UIView *ContainerView;
