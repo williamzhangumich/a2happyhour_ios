@@ -120,26 +120,51 @@
  // Override to customize what kind of query to perform on the class. The default is to query for
  // all objects ordered by createdAt descending.
  - (PFQuery *)queryForTable {
+     
      PFQuery *query = [PFQuery queryWithClassName:self.className];
      //NSLog(@"%@",self.parentViewController);
      
      [query whereKeyExists:@"latlong_geo"];
-     NSString *area;
+     
      
      if (self.parentViewController) {
          ListViewTabController *parent = (ListViewTabController *)self.parentViewController;
-         NSString *text = parent.locationText.text;
-         if (text.length>0) {
+         //NSString *text = parent.locationText.text;
+         
+         NSString* day = parent.DayFilterBtn.titleLabel.text;
+         NSString* area = parent.AreaFilterBtn.titleLabel.text;
+         NSString* type = parent.TypeFilterBtn.titleLabel.text;
+         
+         //NSLog(@"%@ %@ %@ ", day, area, type);
+         
+         if ((![area isEqualToString:@"Any"])&&(![area isEqualToString:@"AREA"])) {
              //NSLog(@"%@",text);
-             area = text;
+             //area = text;
              [query whereKey:@"LocationCategory" equalTo:area];
-             
-             return query;
+             //return query;
          }
          else{
-             //NSLog(@"no atext");
-             return query;
+             NSLog(@"No specification for area");
+             //return query;
          }
+         
+         if ((![day isEqualToString:@"Any"])&&(![day isEqualToString:@"DAY"])) {
+             //NSLog(@"%@",text);
+             //area = text;
+             
+             NSString* DayofWeek = [[day substringToIndex:3] stringByAppendingString:@"Special"];
+             NSLog(@"%@",DayofWeek);
+             
+             [query whereKeyExists:DayofWeek];
+             //return query;
+         }
+         else{
+             NSLog(@"day:%@",day);
+             NSLog(@"no specification for day");
+             //return query;
+         }
+         
+         return query;
          
      }
      
