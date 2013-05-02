@@ -26,7 +26,8 @@
 @synthesize AllTime = _AllTime;
 @synthesize premiun = _premiun;
 @synthesize discount = _discount;
-
+@synthesize ContainerView = _ContainerView;
+@synthesize BarImageView = _BarImageView;
 
 
 - (void) setBar:(PFObject *)bar{
@@ -39,6 +40,7 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    
     self.ScrollView.delegate = self;
     
 //    if (self.parentViewController) {
@@ -47,26 +49,35 @@
 //    }
     
     
-    NSLog(@"%f,%f,%f,%f",self.view.frame.origin.x,self.view.frame.origin.y,self.view.frame.size.height,self.view.frame.size.width);
+    //NSLog(@"%f,%f,%f,%f",self.view.frame.origin.x,self.view.frame.origin.y,self.view.frame.size.height,self.view.frame.size.width);
     
-    NSLog(@"%f,%f,%f,%f",self.ScrollView.frame.origin.x,self.ScrollView.frame.origin.y,self.ScrollView.frame.size.height,self.ScrollView.frame.size.width);
-    NSLog(@"%f,%f",self.ScrollView.contentSize.height,self.ScrollView.contentSize.width);
+    //NSLog(@"%f,%f,%f,%f",self.ScrollView.frame.origin.x,self.ScrollView.frame.origin.y,self.ScrollView.frame.size.height,self.ScrollView.frame.size.width);
+    //NSLog(@"%f,%f",self.ScrollView.contentSize.height,self.ScrollView.contentSize.width);
     
     
     // Set content size
-    self.ScrollView.frame = CGRectMake(0, 0, 320, 455);
+    //self.ScrollView.frame = CGRectMake(0, 0, 320, 455);
 
-    self.ScrollView.contentSize = CGSizeMake(320, 280);
-    //self.ScrollView.frame = self.view.frame;
-    
-    NSLog(@"%f,%f,%f,%f",self.ScrollView.frame.origin.x,self.ScrollView.frame.origin.y,self.ScrollView.frame.size.height,self.ScrollView.frame.size.width);
-    NSLog(@"%f,%f",self.ScrollView.contentSize.height,self.ScrollView.contentSize.width);
+    //self.ScrollView.contentSize = CGSizeMake(320, 280);
     
 	// Do any additional setup after loading the view.
     
 }
 
+-(void) viewDidAppear:(BOOL)animated{
+    NSLog(@"%@",self.ContainerView);
+    self.ScrollView.frame = self.view.frame;
+    self.ScrollView.contentSize = self.ContainerView.frame.size;
+    
+    
+    NSLog(@"FRAME: %f,%f,%f,%f",self.ScrollView.frame.origin.x,self.ScrollView.frame.origin.y,self.ScrollView.frame.size.height,self.ScrollView.frame.size.width);
+    NSLog(@"CONTENTSIZE: %f,%f",self.ScrollView.contentSize.height,self.ScrollView.contentSize.width);
+    
+}
+
 - (void)viewWillAppear:(BOOL)animated{
+    
+    
     NSLog(@"%@",[self.bar objectForKey:@"name"]);
     
     self.ScrollView.backgroundColor = [self getColor:@"222222"];
@@ -94,6 +105,10 @@
 
     self.discount.text = @"Premiun discount Member";
     self.discount.textColor=[self getColor:@"FF9900"];
+    
+    self.BarImageView.image = [UIImage imageNamed:@"Activity_indicator.png"]; // placeholder image
+    
+    self.BarImageView.file = (PFFile *)[self.bar objectForKey:@"image_file"]; // remote image
 
 }
 

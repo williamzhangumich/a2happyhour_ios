@@ -24,6 +24,8 @@
 @property (weak, nonatomic) IBOutlet UILabel *AllTime;
 @property (weak, nonatomic) IBOutlet UILabel *premiun;
 @property (weak, nonatomic) IBOutlet UILabel *discount;
+@property (weak, nonatomic) IBOutlet UIView *ContainerView;
+@property (weak, nonatomic) IBOutlet PFImageView *BarImageView;
 
 
 //@property (weak, nonatomic) IBOutlet UIView *ContainerView;
