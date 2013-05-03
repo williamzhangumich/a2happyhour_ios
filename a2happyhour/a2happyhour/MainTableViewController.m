@@ -138,7 +138,7 @@
          //NSLog(@"%@ %@ %@ ", day, area, type);
          
          if ((![area isEqualToString:@"Any"])&&(![area isEqualToString:@"AREA"])) {
-             //NSLog(@"%@",text);
+             NSLog(@"area: %@",area);
              //area = text;
              [query whereKey:@"LocationCategory" equalTo:area];
              //return query;
@@ -152,18 +152,37 @@
              //NSLog(@"%@",text);
              //area = text;
              
-             NSString* DayofWeek = [[day substringToIndex:3] stringByAppendingString:@"Special"];
-             NSLog(@"%@",DayofWeek);
+             //NSString* DayofWeek = [[day substringToIndex:3] stringByAppendingString:@"Special"];
+             
+             NSString* DayofWeek = [day substringToIndex:3];
+             
+             if ([DayofWeek isEqualToString:@"Wed"]) {
+                 DayofWeek = [DayofWeek stringByAppendingString:@"sSpecial"];
+             } else if ([DayofWeek isEqualToString:@"Thu"]){
+                 DayofWeek = [DayofWeek stringByAppendingString:@"rsSpecial"];
+             } else {
+                 DayofWeek = [DayofWeek stringByAppendingString:@"Special"];
+             }
+             
+             
+             NSLog(@"Day: %@",DayofWeek);
              
              [query whereKeyExists:DayofWeek];
              //return query;
          }
          else{
-             NSLog(@"day:%@",day);
+             //NSLog(@"day:%@",day);
              NSLog(@"no specification for day");
              //return query;
          }
          
+         if ((![type isEqualToString:@"Any"])&&(![type isEqualToString:@"TYPE"])){
+             [query  whereKey:type equalTo:@"1"];
+             NSLog(@"Type: %@",type);
+         }
+         else{
+             NSLog(@"No Specification for Type");
+         }
          return query;
          
      }
