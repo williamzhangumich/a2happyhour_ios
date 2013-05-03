@@ -27,6 +27,9 @@
 @property (weak, nonatomic) IBOutlet UIView *ContainerView;
 @property (weak, nonatomic) IBOutlet PFImageView *BarImageView;
 
+@property (weak, nonatomic) IBOutlet UIImageView *premiumLine;
+@property (weak, nonatomic) IBOutlet UIView *titleback;
+
 
 //@property (weak, nonatomic) IBOutlet UIView *ContainerView;
 

@@ -209,6 +209,8 @@
  - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath object:(PFObject *)object {
      static NSString *CellIdentifier = @"BarTableViewCell";
      
+
+     
      BarTableViewCell *cell = (BarTableViewCell *)[tableView dequeueReusableCellWithIdentifier:CellIdentifier];
      if (cell == nil) {
          cell = [[BarTableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier];
@@ -228,6 +230,12 @@
      
      cell.Image.file = (PFFile *)[object objectForKey:@"image_file"]; // remote image
      cell.AllSpecial.text = [object objectForKey:@"AllSpecial"];
+     
+//     //set all special label height
+//       CGSize labelSize = [[object objectForKey:@"AllSpecial"] sizeWithFont:cell.AllSpecial.font constrainedToSize:CGSizeMake(cell.AllSpecial.frame.size.width, 60.0f) lineBreakMode:cell.AllSpecial.lineBreakMode];
+//     cell.AllSpecial.frame = CGRectMake(128, 51, 180, labelSize.height);
+
+     
      [cell.Image loadInBackground];
      
      

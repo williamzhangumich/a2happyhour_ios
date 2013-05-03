@@ -28,6 +28,8 @@
 @synthesize discount = _discount;
 @synthesize ContainerView = _ContainerView;
 @synthesize BarImageView = _BarImageView;
+@synthesize premiumLine = _premiumLine;
+@synthesize titleback = _titleback;
 
 
 - (void) setBar:(PFObject *)bar{
@@ -42,6 +44,41 @@
     [super viewDidLoad];
     
     self.ScrollView.delegate = self;
+    
+    NSLog(@"%@",[self.bar objectForKey:@"name"]);
+    
+    self.ScrollView.backgroundColor = [self getColor:@"222222"];
+    self.name.text = [self.bar objectForKey:@"name"];
+    self.name.textColor=[self getColor:@"33CC66"];
+    
+    self.deal.text = [self.bar objectForKey:@"AllSpecial"];
+    self.deal.textColor=[self getColor:@"FF9900"];
+    
+    self.address.text = [self.bar objectForKey:@"address"];
+    self.address.textColor=[self getColor:@"DDDDDD"];
+    
+    
+    self.contact.text = [self.bar objectForKey:@"Contact"];
+    self.contact.textColor=[self getColor:@"DDDDDD"];
+    
+    self.regular.text = @"Regular Happy Hour";
+    self.regular.textColor=[self getColor:@"0088CB"];
+    
+    self.AllTime.text = [self.bar objectForKey:@"AllTime"];
+    self.AllTime.textColor=[self getColor:@"CC3300"];
+    
+    self.premiun.text = @"Premiun Member";
+    self.premiun.textColor=[self getColor:@"0088CB"];
+    
+    self.discount.text = @"Premiun discount Member";
+    self.discount.textColor=[self getColor:@"FF9900"];
+    
+    self.BarImageView.image = [UIImage imageNamed:@"Activity_indicator.png"]; // placeholder image
+    
+    self.BarImageView.file = (PFFile *)[self.bar objectForKey:@"image_file"]; // remote image
+    
+    
+
     
 //    if (self.parentViewController) {
 //        ListViewTabController *parent = (ListViewTabController *)self.parentViewController;
@@ -65,50 +102,49 @@
 }
 
 -(void) viewDidAppear:(BOOL)animated{
+
     NSLog(@"%@",self.ContainerView);
-    self.ScrollView.frame = self.view.frame;
-    self.ScrollView.contentSize = self.ContainerView.frame.size;
     
+    //position setting
+    CGSize SpecialSize = [[self.bar objectForKey:@"AllSpecial"] sizeWithFont:self.deal.font constrainedToSize:CGSizeMake(240, 1000) lineBreakMode:self.premiun.lineBreakMode];
+    
+    self.deal.frame= CGRectMake(self.deal.frame.origin.x, self.deal.frame.origin.y, self.deal.frame.size.width, SpecialSize.height);
+    
+    
+    CGFloat premiumy = self.deal.frame.origin.y + SpecialSize.height +5;
+    self.premiun.frame = CGRectMake(self.premiun.frame.origin.x, premiumy, self.premiun.frame.size.width, self.premiun.frame.size.height);
+    
+    
+    self.premiumLine.frame = CGRectMake(self.premiumLine.frame.origin.x, premiumy+self.premiun.frame.size.height, self.premiumLine.frame.size.width, self.premiumLine.frame.size.height);
+    
+    CGFloat discounty = self.premiumLine.frame.origin.y+self.premiumLine.frame.size.height+5;
+    
+    
+    CGSize DiscountSize = [self.discount.text sizeWithFont:self.discount.font forWidth:240 lineBreakMode:self.discount.lineBreakMode];
+    
+    self.discount.frame = CGRectMake(self.discount.frame.origin.x, discounty, self.discount.frame.size.width, DiscountSize.height);
+    
+    self.BarMapView.frame =CGRectMake(self.BarMapView.frame.origin.x, discounty+DiscountSize.height+10, self.BarMapView.frame.size.width, self.BarMapView.frame.size.height);
+    
+    
+    self.ScrollView.frame = self.view.frame;
+    // self.ScrollView.contentSize = self.ContainerView.frame.size;
+    self.ScrollView.contentSize = CGSizeMake(320, self.BarMapView.frame.origin.y+240);
     
     NSLog(@"FRAME: %f,%f,%f,%f",self.ScrollView.frame.origin.x,self.ScrollView.frame.origin.y,self.ScrollView.frame.size.height,self.ScrollView.frame.size.width);
     NSLog(@"CONTENTSIZE: %f,%f",self.ScrollView.contentSize.height,self.ScrollView.contentSize.width);
     
+    NSLog(@"1: %f,%f",self.deal.frame.size.width,self.deal.frame.size.height);
+
+
 }
 
 - (void)viewWillAppear:(BOOL)animated{
     
     
-    NSLog(@"%@",[self.bar objectForKey:@"name"]);
-    
-    self.ScrollView.backgroundColor = [self getColor:@"222222"];
-    self.name.text = [self.bar objectForKey:@"name"];
-    self.name.textColor=[self getColor:@"33CC66"];
 
-    self.deal.text = [self.bar objectForKey:@"AllSpecial"];
-    self.deal.textColor=[self getColor:@"FF9900"];
+    NSLog(@"2: %f,%f",self.deal.frame.size.width,self.deal.frame.size.height);
     
-    self.address.text = [self.bar objectForKey:@"address"];
-    self.address.textColor=[self getColor:@"DDDDDD"];
-
-    
-    self.contact.text = [self.bar objectForKey:@"Contact"];
-    self.contact.textColor=[self getColor:@"DDDDDD"];
-
-    self.regular.text = @"Regular Happy Hour";
-    self.regular.textColor=[self getColor:@"0088CB"];
-
-    self.AllTime.text = [self.bar objectForKey:@"AllTime"];
-    self.AllTime.textColor=[self getColor:@"CC3300"];
-    
-    self.premiun.text = @"Premiun Member";
-    self.premiun.textColor=[self getColor:@"0088CB"];
-
-    self.discount.text = @"Premiun discount Member";
-    self.discount.textColor=[self getColor:@"FF9900"];
-    
-    self.BarImageView.image = [UIImage imageNamed:@"Activity_indicator.png"]; // placeholder image
-    
-    self.BarImageView.file = (PFFile *)[self.bar objectForKey:@"image_file"]; // remote image
 
 }
 
